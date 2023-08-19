@@ -8,10 +8,12 @@ import { useScrollPosition } from './useScrollPosition'
 
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Home', href: '#', current: true },
+    { name: 'New Uploads', href: '#', current: false },
+    { name: 'Podcast & Shows', href: '#', current: false },
+    { name: 'Audiobooks', href: '#', current: false },
+    { name: 'My Collection', href: '#', current: false },
+
 ]
 
 
