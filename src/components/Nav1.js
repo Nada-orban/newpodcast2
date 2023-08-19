@@ -1,7 +1,10 @@
 import React from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { useScrollPosition } from './useScrollPosition'
+
+
 
 
 const navigation = [
@@ -20,9 +23,10 @@ function classNames(...classes) {
 
 
 function Nav1() {
+    const scrollPosition = useScrollPosition()
     return (
         <>
-            <Disclosure as="nav" className="bg-gray-950 sticky">
+            <Disclosure as="nav" className="bg-neutral-950 sticky py-1 sm:py-5">
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -39,8 +43,10 @@ function Nav1() {
                                         )}
                                     </Disclosure.Button>
                                 </div>
-                                <div className='absolute items-center right-1/2  inset-y-5'>
-                                    <h1 className='text-white '>Podcast</h1>
+                                <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2  inset-y-1'>
+                                    <h1 className={classNames(
+                                        scrollPosition ? 'sm:text-xl' : ' sm:text-3xl', 'text-white text-xl  font-black'
+                                    )}>PODCAST</h1>
                                 </div>
 
 
@@ -53,7 +59,7 @@ function Nav1() {
                                     >
                                         <span className="absolute -inset-1.5" />
                                         <span className="sr-only">View notifications</span>
-                                        <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                        <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
                                     </button>
 
                                     {/* Profile dropdown */}
@@ -139,14 +145,17 @@ function Nav1() {
             </Disclosure>
             <hr />
 
-            <div className="hidden sm:block bg-gray-950 ">
+            <div className={classNames(
+                scrollPosition ? 'sm:hidden' : ' sm:block', 'hidden  bg-neutral-950  py-2'
+            )}>
+
                 <div className="flex   justify-center">
                     {navigation.map((item) => (
                         <a
                             key={item.name}
                             href={item.href}
                             className={classNames(
-                                item.current ? ' text-red-500' : ' text-white hover:bg-gray-700 hover:text-white',
+                                item.current ? ' text-white' : ' text-slate-50/50   hover:text-white',
                                 '  rounded-md px-3 py-2 text-sm font-medium'
                                 //here i have function what happen when the item.current=true or false and after coma that is my class for this item 
                                 //how will be like in all of this status
