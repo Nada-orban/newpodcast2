@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Nav1 from "../components/Nav1";
 import Head from "next/head";
+import Landing from '../components/Landing';
 
 
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
+
+      <Landing />
 
 
     </>
