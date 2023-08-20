@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
@@ -8,11 +8,11 @@ import { useScrollPosition } from './useScrollPosition'
 
 
 const navigation = [
-    { name: 'Home', href: '#', current: true },
-    { name: 'New Releases', href: '#', current: false },
-    { name: 'Podcast & Shows', href: '#', current: false },
-    { name: 'Audiobooks', href: '#', current: false },
-    { name: 'My Collection', href: '#', current: false },
+    { name: 'Home', href: '/', current: false },
+    { name: 'New Releases', href: '/newrelease', current: true },
+    { name: 'Podcast & Shows', href: '/podcast&shows', current: false },
+    { name: 'Audiobooks', href: '/audiobooks', current: false },
+    { name: 'My Collection', href: '/mycollection', current: false },
 
 ]
 
@@ -24,8 +24,12 @@ function classNames(...classes) {
 }
 
 
+
 function Nav1() {
+    const [current, setCurrent] = useState(false)
     const scrollPosition = useScrollPosition()
+
+
     return (
         <>
             <Disclosure as="nav" className={classNames(
@@ -169,6 +173,7 @@ function Nav1() {
                                 //how will be like in all of this status
                             )}
                             aria-current={item.current ? 'page' : undefined}
+
                         >
                             {item.name}
                         </a>
