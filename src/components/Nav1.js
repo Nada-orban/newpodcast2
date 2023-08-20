@@ -9,7 +9,7 @@ import { useScrollPosition } from './useScrollPosition'
 
 const navigation = [
     { name: 'Home', href: '#', current: true },
-    { name: 'New Uploads', href: '#', current: false },
+    { name: 'New Releases', href: '#', current: false },
     { name: 'Podcast & Shows', href: '#', current: false },
     { name: 'Audiobooks', href: '#', current: false },
     { name: 'My Collection', href: '#', current: false },
@@ -28,12 +28,16 @@ function Nav1() {
     const scrollPosition = useScrollPosition()
     return (
         <>
-            <Disclosure as="nav" className="bg-neutral-950 sticky py-1 sm:py-5">
+            <Disclosure as="nav" className={classNames(
+                scrollPosition ? "sm:py-2" : "sm:py-5", "bg-neutral-950  py-1 "
+            )}>
                 {({ open }) => (
                     <>
                         <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                             <div className="relative flex h-16  justify-between">
-                                <div className="absolute   sm:hidden left-0 inset-y-3 ">
+                                <div className={classNames(
+                                    scrollPosition ? "sm:block" : "sm:hidden", "absolute    left-0 inset-y-3"
+                                )}>
                                     {/* Mobile menu button*/}
                                     <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                         <span className="absolute inset-0.5" />
@@ -124,7 +128,9 @@ function Nav1() {
                             </div>
                         </div>
 
-                        <Disclosure.Panel className="sm:hidden">
+                        <Disclosure.Panel className={classNames(
+                            scrollPosition ? "sm:block" : "sm:hidden"
+                        )}>
                             <div className="space-y-1 px-2 pb-3 pt-2 ">
                                 {navigation.map((item) => (
                                     <Disclosure.Button
