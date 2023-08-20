@@ -29,7 +29,7 @@ function Nav1() {
     return (
         <>
             <Disclosure as="nav" className={classNames(
-                scrollPosition ? "sm:py-2" : "sm:py-5", "bg-neutral-950  py-1 "
+                scrollPosition ? "sm:py-1" : "sm:py-5", "bg-neutral-950  sticky top-0 py-1 transition duration-200 ease-out "
             )}>
                 {({ open }) => (
                     <>
