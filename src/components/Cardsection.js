@@ -10,7 +10,7 @@ function Cardsection({ id, title, imagesrc, date }) {
                     <imgplaceholder
                         src={imagesrc}
                         alt=""
-                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                        className="h-full w-full object-cover object-center "
                     />
                 </div>
                 <div className="mt-4 flex justify-between">
