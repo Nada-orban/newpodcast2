@@ -3,18 +3,20 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { useScrollPosition } from './useScrollPosition'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 
 
 
 const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'Design', href: '/design', current: true },
-    { name: 'Development', href: '/development', current: false },
-    { name: 'Design & Dev', href: '/designDev', current: false },
-    { name: 'Business', href: '/business', current: false },
-    { name: 'Lifestyle', href: '/lifestyle', current: false },
-    { name: 'My Collection', href: '/mycollection', current: false },
+    { name: 'Home', href: '/' },
+    { name: 'Design', href: '/design' },
+    { name: 'Development', href: '/development' },
+    { name: 'Design & Dev', href: '/designDev' },
+    { name: 'Business', href: '/business' },
+    { name: 'Lifestyle', href: '/lifestyle' },
+    { name: 'My Collection', href: '/mycollection' },
 
 ]
 
@@ -28,8 +30,9 @@ function classNames(...classes) {
 
 
 function Nav1() {
-    const [current, setCurrent] = useState(false)
+    const router = useRouter()
     const scrollPosition = useScrollPosition()
+
 
 
     return (
@@ -148,8 +151,12 @@ function Nav1() {
                                             'block rounded-md px-3 py-2 text-base font-medium'
                                         )}
                                         aria-current={item.current ? 'page' : undefined}
+                                        onClick={() => handleItemClick(index)}
                                     >
+
                                         {item.name}
+
+
                                     </Disclosure.Button>
                                 ))}
                             </div>
@@ -164,22 +171,27 @@ function Nav1() {
             )}>
 
                 <div className="flex   justify-center">
-                    {navigation.map((item) => (
-                        <a
-                            key={item.name}
-                            href={item.href}
-                            className={classNames(
-                                item.current ? ' text-white' : ' text-slate-50/50   hover:text-white',
-                                '  rounded-md px-3 py-2 text-sm font-medium'
-                                //here i have function what happen when the item.current=true or false and after coma that is my class for this item 
-                                //how will be like in all of this status
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
+                    {navigation.map((item) => {
+                        const isActive = router.asPath === item.href;
+                        return (
 
-                        >
-                            {item.name}
-                        </a>
-                    ))}
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className={classNames(
+                                    isActive ? ' text-white' : ' text-slate-50/50   hover:text-white',
+                                    '  rounded-md px-3 py-2 text-sm font-medium'
+                                    //here i have function what happen when the item.current=true or false and after coma that is my class for this item 
+                                    //how will be like in all of this status
+                                )}
+                                aria-current={isActive ? 'page' : undefined}
+
+
+                            >
+                                {item.name}
+                            </Link>
+                        )
+                    })}
                 </div>
             </div>
 
