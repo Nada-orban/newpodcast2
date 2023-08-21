@@ -5,6 +5,14 @@ import Cardsection from '../components/Cardsection';
 import { products } from '../../data'
 
 export default function Home({ products }) {
+  const designproducts = products.filter((product) => product.category === "Design")
+  const designdevproducts = products.filter((product) => product.category === "Design and Dev")
+  const businessproducts = products.filter((product) => product.category === "Business")
+  const lifestyleproducts = products.filter((product) => product.category === "Lifestyle")
+  const developproducts = products.filter((product) => product.category === "Development")
+
+
+
   return (
     <>
       <Head>
@@ -21,19 +29,57 @@ export default function Home({ products }) {
 
       <div>
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-gray-900">New Releases</h2>
-
-          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {products.map((product) => {
-              return (
-                <Cardsection key={product.id} {...product} />
-              )
-
-
-
-
-            })}
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Design</h2>
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {designproducts.map((product) => {
+                return (
+                  <Cardsection key={product.id} {...product} />
+                )
+              })}
+            </div>
           </div>
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Design & Dev</h2>
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {designdevproducts.map((product) => {
+                return (
+                  <Cardsection key={product.id} {...product} />
+                )
+              })}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Business</h2>
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {businessproducts.map((product) => {
+                return (
+                  <Cardsection key={product.id} {...product} />
+                )
+              })}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Lifestyle</h2>
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {lifestyleproducts.map((product) => {
+                return (
+                  <Cardsection key={product.id} {...product} />
+                )
+              })}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Development</h2>
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {developproducts.map((product) => {
+                return (
+                  <Cardsection key={product.id} {...product} />
+                )
+              })}
+            </div>
+          </div>
+
         </div>
 
       </div>

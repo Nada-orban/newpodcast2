@@ -111,7 +111,7 @@ export const products = [
         name: "Binpress Podcast",
         description: "A podcast about making and selling digital products. Marketing, distribution and other tips around helping you build and sell digital products",
         category: "Business",
-        img: "",
+        img: "https://stitcher-classic.imgix.net/feedimagesplain600/51198.jpg?w=850&h=850&sat=-100",
         source: "http://www.binpress.com/blog/category/podcast/",
         "itunes": "https://itunes.apple.com/us/podcast/the-binpress-podcast/id897178291",
         "android": "http://www.binpress.com/blog/category/podcast/feed/"
@@ -121,7 +121,7 @@ export const products = [
         name: "Seanwes Podcast",
         description: "Join entrepreneurs Sean McCabe and Ben Toalson as they let you inside their discussions on the many facets of making a living online. You'll come away from every episode with something of value that you can apply to your business. Tangible insights on creativity and business every single Wednesday and Friday.",
         category: "Design",
-        img: "",
+        img: "https://cdn.shopify.com/s/files/1/1454/7324/files/Seanwes_Podcast.jpg?v=1618684403",
         source: "http://seanwes.com/podcast/",
         "itunes": "https://itunes.apple.com/us/podcast/seanwes-podcast/id685421236",
         "rss": "http://seanwes.com/feed/podcast"
@@ -131,7 +131,7 @@ export const products = [
         name: "Let's Make Mistakes",
         description: "Award-winning designer Mike Montiero of Mule Design Studios talks shop with an assorted collection of co-hosts about standard design concepts, from ideation to implementation, and how to leverage every ounce of creativity throughout the process.",
         category: "Design",
-        img: "",
+        img: "https://i.scdn.co/image/f9f2166ae734eabf7cb9ae8128ecfbd10297d899",
         source: "http://www.muleradio.net/mistakes/",
         "itunes": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=432550963",
         "rss": "http://feeds.muleradio.net/mistakes"
@@ -141,7 +141,7 @@ export const products = [
         name: "Young Guns Show",
         description: "The Young Guns Show aims to feature and inspire the young guns in the web industry — the guys and gals that aren't waiting for \"someday\" to do amazing things.",
         category: "Design",
-        img: "",
+        img: "https://cdn-images.podbay.fm/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJodHRwczovL2QzdDNvemZ0bWRtaDNpLmNsb3VkZnJvbnQubmV0L3Byb2R1Y3Rpb24vcG9kY2FzdF91cGxvYWRlZF9ub2xvZ28vMTUzNDQ3Mi8xNTM0NDcyLTE1NTIyNzU3MjU2OTUtNjA4NTY1M2MzYzE3Ny5qcGciLCJmYWxsYmFjayI6Imh0dHBzOi8vaXMxLXNzbC5tenN0YXRpYy5jb20vaW1hZ2UvdGh1bWIvTXVzaWMxMTMvdjQvZGEvOWUvOGIvZGE5ZThiNDYtZWE5ZS1kZjRhLTJmYTQtODQ0ZmFkMjE2NmZiL3NvdXJjZS82MDB4NjAwYmIuanBnIn0.33y8tfn_SOLMegOxXl6nQD-W8ZUJKoboaHK_KHufYP4.jpg?width=400&height=400",
         source: "http://younggunsshow.com/",
         "itunes": "https://itunes.apple.com/us/podcast/young-guns-show/id507917469",
         "rss": "http://feeds.feedburner.com/younggunsshow"
@@ -151,7 +151,7 @@ export const products = [
         name: "The Web Ahead",
         description: "Conversations with world experts on changing technologies and future of the web. The Web Ahead is your shortcut to keeping up. Hosted by Jen Simmons.",
         category: "Design",
-        img: "",
+        img: "https://i.scdn.co/image/956a1cad8e1a7cec6c8c1958b03f94e2bb553d3d",
         source: "http://5by5.tv/webahead",
         "itunes": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=464936442",
         "rss": "http://feeds.5by5.tv/webahead"
@@ -161,7 +161,7 @@ export const products = [
         name: "Typeradio",
         description: "Typeradio is a regular podcast station that covers all things type, including fonts, typography and trends.",
         category: "Design",
-        img: "",
+        img: "https://stitcher-classic.imgix.net/feedimagesplain600/19056.jpg?w=600&h=600",
         source: "http://www.typeradio.org/",
         "itunes": "https://itunes.apple.com/us/podcast/typeradio-podcast/id77801288?mt=2"
     },
@@ -170,7 +170,7 @@ export const products = [
         name: "BizCraft",
         description: "The bi-weekly podcast. hosted by Carl Smith of nGen Works and Gene Crawford of UnmatchedStyle. The primary topic is the business side of digital design.",
         category: "Design",
-        img: "",
+        img: "https://is2-ssl.mzstatic.com/image/thumb/Podcasts6/v4/29/12/b1/2912b12d-eb2a-32eb-0164-1b02b153f287/mza_4464950674970491073.jpg/600x600bb.jpg",
         source: "http://unmatchedstyle.com/bizcraft",
         "itunes": "https://itunes.apple.com/us/podcast/unmatched-style-bizcraft/id537301913",
         "rss": "http://feeds.feedburner.com/bizcraft"
@@ -180,7 +180,7 @@ export const products = [
         name: "Iterate Podcast",
         description: "Iterate is a fortnightly podcast, focusing on mobile and app design for all iOS, Mac, Android and other platforms.",
         category: "Design",
-        img: "",
+        img: "https://deow9bq0xqvbj.cloudfront.net/image-logo/4682894/photo_300x300.jpg",
         source: "https://bjango.com/articles/iterate/",
         "itunes": "https://itunes.apple.com/us/podcast/iterate/id447063932"
     },
@@ -189,7 +189,7 @@ export const products = [
         name: "ShopTalk",
         description: "ShopTalk is a podcast about front end web design, development and UX. Each week Chris Coyier and Dave Rupert are joined by a special guest to talk shop and answer listener submitted questions.",
         category: "Design and Dev",
-        img: "",
+        img: "https://i2.wp.com/shoptalkshow.com/wp-content/uploads/2021/01/shoptalk-show-social.png?fit=552%2C552&ssl=1",
         source: "http://shoptalkshow.com/",
         "itunes": "https://itunes.apple.com/podcast/id493890455",
         "rss": "http://shoptalkshow.com/feed/podcast/"
@@ -199,7 +199,7 @@ export const products = [
         name: "Data Stories",
         description: "Enrico Bertini and Moritz Stefaner discuss the latest developments in data analytics, visualization and related topics.",
         category: "Design",
-        img: "",
+        img: "https://datastori.es/wp-content/cache/podlove/ee/2a473f91a0edbb253663696244c6f4/data-stories_400x.png",
         source: "http://datastori.es/",
         "itunes": "https://itunes.apple.com/us/podcast/data-stories/id502854960?mt=2",
         "rss": "http://datastori.es/feed/"
@@ -229,7 +229,7 @@ export const products = [
         name: "A Responsive Web Design Podcast",
         description: "A podcast from Karen McGrane and Ethan Marcotte, who interview people who make responsive designs happen.",
         category: "Design and Dev",
-        img: "",
+        img: "https://cdn.simplecast.com/images/5a4a9a3e-423a-40f7-af67-d250203d0516/b7c51f9d-fcca-4a82-a623-4449013665fe/3000x3000/1429534518-artwork.jpg?aid=rss_feed",
         source: "http://responsivewebdesign.com/podcast/",
         "itunes": "https://itunes.apple.com/us/podcast/a-responsive-design-podcast/id910013523?mt=2",
         "rss": "http://responsivewebdesign.com/podcast/feed.xml"
@@ -239,7 +239,7 @@ export const products = [
         name: "The Deeply Graphic Designcast",
         description: "The Deeply Graphic DesignCast is a podcast aimed at graphic and web designers with a simple philosophy: to talk about all the things that they don’t teach in design school. Every episode tackles a new design related topic, and the hosts engage in a roundtable discussion on the topic at hand, offering the benefit of their experience, “tips from the trenches,” and above all, lively conversation that people actually look forward to listening to. In addition to the topic of the day, the gang gets the audience involved by answering a listener-submitted question every single episode.",
         category: "Design and Dev",
-        img: "",
+        img: "https://i.scdn.co/image/f354f87836d6812710f960bbb7e3416c054172b4",
         source: "http://thedeependdesign.com/graphic-design-podcast/",
         "itunes": "https://itunes.apple.com/us/podcast/the-deep-end-design-podcasts/id494747654?mt=2"
     },
@@ -248,7 +248,7 @@ export const products = [
         name: "The Gently Mad",
         description: "The Gently Mad is a show about life, business & entrepreneurship without the bullshit. New episodes every Monday, Wednesday and Friday.",
         category: "Lifestyle",
-        img: "",
+        img: "https://i.scdn.co/image/ab6765630000ba8ac0486a9c17592b205f2a2c75",
         source: "http://avclark.com/tgm/",
         "itunes": "https://itunes.apple.com/us/podcast/gently-mad-life-business-entrepreneurship/id950222137",
         "soundcloud": "https://soundcloud.com/thegentlymad",
@@ -259,7 +259,7 @@ export const products = [
         name: "Adventures In Design",
         description: "Graphic design gossip and artistic growing pains through the eyes of two handsome DIY poster designers and their friends.",
         category: "Design",
-        img: "",
+        img: "https://i1.sndcdn.com/avatars-000457167855-sib6tr-t500x500.jpg",
         source: "http://www.adventuresindesignmarket.com/",
         "itunes": "https://itunes.apple.com/us/podcast/adventures-in-design/id503341322"
     },
@@ -268,7 +268,7 @@ export const products = [
         name: "Revision Path",
         description: "A weekly showcase of the world's Black graphic designers, web designers, and web developers.",
         category: "Lifestyle",
-        img: "",
+        img: "https://i.scdn.co/image/a9af111fb0276ec286d3243eefe3fef7ea4e852e",
         source: "http://revisionpath.com/",
         "itunes": "https://itunes.apple.com/us/podcast/revision-path/id834173190",
         "rss": "http://simplecast.fm/podcasts/102/rss"
@@ -278,7 +278,7 @@ export const products = [
         name: "Design Review",
         description: "A weekly podcast about products from a unique designer perspective! Your hosts are Chris Liu and Jonathan Shariat. Each week, we will go through a product and talk about the experience and hopefully it will be interesting and informative, along with entertaining! So join us here every week!",
         category: "Design",
-        img: "",
+        img: "https://i.scdn.co/image/ab6765630000ba8a82183df56c568e12dbeff6c2",
         source: "http://www.designreviewpodcast.com/",
         "itunes": "https://itunes.apple.com/us/podcast/design-review/id947753823?mt=2",
         "soundcloud": "https://soundcloud.com/design-review",
@@ -289,7 +289,7 @@ export const products = [
         name: "Working Out",
         description: "Join Ashley Baxter and Paddy Donnelly on a journey to figure out how to create a business doing what you love. Is it possible to make a living from your hobby? On Working out, Ashley & Paddy discuss their own personal journeys in creating their passion-based business. This is about the expedition, the here and now, the daily challenges and achievements towards getting paid for your passion.",
         category: "Business",
-        img: "",
+        img: "https://podcastle.ai/blog/content/images/2022/04/workout-podcasts.png",
         source: "http://workingoutpodcast.com/",
         "itunes": "https://itunes.apple.com/gb/podcast/working-out/id875239968",
         "rss": "http://simplecast.fm/podcasts/128/rss"
@@ -299,7 +299,7 @@ export const products = [
         name: "Resourceful Designer",
         description: "Wouldn't it be nice if you could spend more time designing and less time worrying about your design business? Resourceful Designer offers tips, tricks and resources to help streamline your graphic design and web design business so you can get back to what you do best… Designing! Let me know what topics you would like me to cover by emailing feedback@resourcefuldesigner.com",
         category: "Business",
-        img: "",
+        img: "https://ssl-static.libsyn.com/p/assets/6/b/8/4/6b84885b6ac7bd7b/Resourceful-Designer-Podcast-Artwork.jpg",
         source: "http://resourcefuldesigner.com/",
         "itunes": "https://itunes.apple.com/ca/podcast/resourceful-designer-resources/id1040570923",
         "android": "http://subscribeonandroid.com/resourcefuldesigner.libsyn.com/rss",
@@ -310,7 +310,7 @@ export const products = [
         name: "99% Invisible",
         description: "99% Invisible (99 Percent Invisible) is a weekly exploration of the process and power of design and architecture. From award winning producer Roman Mars, KALW in San Francisco, and Radiotopia from PRX. ",
         category: "Design",
-        img: "",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/99%25_Invisible_logo.svg/1200px-99%25_Invisible_logo.svg.png",
         source: "http://99percentinvisible.org/",
         "itunes": "https://itunes.apple.com/us/podcast/id394775318",
         "soundcloud": "https://soundcloud.com/roman-mars/",
@@ -321,7 +321,7 @@ export const products = [
         name: "The Start",
         description: "The Start is a podcast focused on creative individuals and their growth in the industry, from the very beginning.",
         category: "Lifestyle",
-        img: "",
+        img: "https://uploads.guim.co.uk/2018/01/19/the-start-cover-min.png",
         source: "http://thestart.fm/",
         "itunes": "https://itunes.apple.com/us/podcast/the-start/id852802179",
         "rss": "http://simplecast.fm/podcasts/122/rss"
@@ -331,7 +331,7 @@ export const products = [
         name: "The Fizzle Show",
         description: "The Fizzle Show is a podcast for creative entrepreneurs and honest business builders who want to earn a living doing something they care about.",
         category: "Business",
-        img: "",
+        img: "https://i.scdn.co/image/ab6765630000ba8a40de036639881352baa593c6",
         source: "https://fizzle.co/show",
         "itunes": "https://itunes.apple.com/us/podcast/fizzle-show-honest-online/id656726654",
         "soundcloud": "https://soundcloud.com/fizzleco/sets/the-fizzle-show",
@@ -342,7 +342,7 @@ export const products = [
         name: "Happy Monday",
         description: "A new, short-burst, industry podcast available every Monday from 7am GMT.",
         category: "Lifestyle",
-        img: "",
+        img: "https://is2-ssl.mzstatic.com/image/thumb/Podcasts123/v4/91/25/aa/9125aa59-65e7-1dee-eb00-8c7a1682c446/mza_6290650903147063515.jpg/600x600bb.jpg",
         source: "http://www.happymondaypodcast.com/",
         "itunes": "https://itunes.apple.com/us/podcast/happy-monday/id586131811",
         "rss": "http://simplecast.fm/podcasts/3/rss"
@@ -352,7 +352,7 @@ export const products = [
         name: "Pencil vs Pixel",
         description: "Pencil vs Pixel is where creation meets creators. A podcast and resource for the originators, the tinkerers, the makers of the world to share the process, the principle and the payoff in doing what we do. It’s the juncture of idea and result, where builders and doers of things both analog and digital discuss the way we make things, experience challenges and wins.",
         category: "Business",
-        img: "",
+        img: "https://i1.sndcdn.com/avatars-k7izvHAlX8jbV0eW-JnzFSA-original.jpg",
         source: "http://pencilvspixel.com/",
         "itunes": "https://itunes.apple.com/us/podcast/pencil-vs-pixel/id731298028#",
         "soundcloud": "https://soundcloud.com/pencilvspixel"
@@ -362,7 +362,7 @@ export const products = [
         name: "PageBreak Podcast",
         description: "Pagebreak is an audio podcast hosted by Liz Andrade and Niki Brown. Discussions pertain to Freelance, Design, Development, Marketing and other such things.",
         category: "Design and Dev",
-        img: "",
+        img: "https://m.media-amazon.com/images/I/51++5qp+uML._SL500_.jpg",
         source: "http://www.pagebreakpodcast.com/",
         "itunes": "https://itunes.apple.com/podcast/pagebreak-podcast/id390204762",
         "rss": "http://feeds.feedburner.com/pagebreakpodcast"
@@ -372,7 +372,7 @@ export const products = [
         name: "Non Breaking Space Show",
         description: "Seeking out the best, brightest, and smartest creative people on digital art, design, and development. From workflows to life hacks, we examine why they do what they do and how they did it. Hosted by Chris Enns, Christopher Schmitt and Sam Kapila.",
         category: "Lifestyle",
-        img: "",
+        img: "https://i.scdn.co/image/8d2cd80e8c8fb6ee541b4b3b29f34ae7eb28b5db",
         source: "http://goodstuff.fm/nbsp",
         "itunes": "https://itunes.apple.com/us/podcast/the-non-breaking-space-show/id507162981",
         "rss": "http://feeds.goodstuff.fm/nbsp"
@@ -382,7 +382,7 @@ export const products = [
         name: "Debug",
         description: "Debug is a conversational interview show about developing software and services, primarily for iPhone, iPad, Mac, and gaming.",
         category: "Design and Dev",
-        img: "",
+        img: "https://yt3.googleusercontent.com/Z2xCIjGkYohO3wv_mVoeydkL9PjoIrBY6BW4QD2wfkAMPRBmoy8U9kWiUMAA6-3QkI0inYmRSU4=s900-c-k-c0x00ffffff-no-rj",
         source: "http://www.imore.com/debug",
         "itunes": "https://itunes.apple.com/us/podcast/debug/id578812394",
         "rss": "http://feeds.feedburner.com/debugshow"
@@ -392,7 +392,7 @@ export const products = [
         name: "This Developer's Life",
         description: "A podcast about developers and their lives.",
         category: "Lifestyle",
-        img: "",
+        img: "https://is2-ssl.mzstatic.com/image/thumb/Podcasts4/v4/f4/de/7f/f4de7fdc-879a-a988-7e15-f191dfc37a39/mza_2448776638727385409.png/600x600bb.jpg",
         source: "http://thisdeveloperslife.com/",
         "itunes": "https://itunes.apple.com/us/podcast/this-developers-life/id389727545",
         "rss": "http://feeds.feedburner.com/thisdeveloperslife"
@@ -402,7 +402,7 @@ export const products = [
         name: "Back to Work",
         description: "Back to Work is an award winning talk show with Merlin Mann and Dan Benjamin discussing productivity, communication, work, barriers, constraints, tools, and more.",
         category: "Lifestyle",
-        img: "",
+        img: "https://assets.fireside.fm/file/fireside-images/podcasts/images/3/316b04e9-2b1f-4ccb-98f1-28fe023874a8/cover.jpg",
         source: "http://5by5.tv/b2w",
         "itunes": "https://itunes.apple.com/podcast/back-to-work/id415535037",
         "rss": "http://feeds.5by5.tv/b2w"
