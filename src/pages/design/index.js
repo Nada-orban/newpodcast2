@@ -3,6 +3,7 @@ import Cardsection from '../../components/Cardsection'
 // import { products } from '../../../data'
 
 function Landing({ products }) {
+    const designproducts = products.filter((product) => product.category === "Design")
 
     return (
         <div>
@@ -10,7 +11,7 @@ function Landing({ products }) {
                 <h2 className="text-2xl font-bold tracking-tight text-gray-900">New Releases</h2>
 
                 <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    {products.map((product) => {
+                    {designproducts.map((product) => {
                         return (
                             <Cardsection key={product.id} {...product} />
                         )

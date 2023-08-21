@@ -10,12 +10,10 @@ function Details({ product }) {
             <div className='container mx-auto'>
                 <div className='grid  grid-cols-3 gap-4'>
                     <div >
-                        <Image
-
-                            width={300}
-                            height={300}
+                        <img
+                            src={product.img}
                             alt=''
-                            className={styles.productimage}
+                            className='h-42 w-42 object-cover object-center '
                         />
                         <p className='text-slate-700/75 my-3 text-xs'>
                             10 episods
