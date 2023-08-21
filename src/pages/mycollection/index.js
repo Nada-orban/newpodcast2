@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Image from 'next/image'
 import imagelogo from '../../../public/264x264-000000-80-0-0.jpg'
-import { PlayIcon, SpeakerWaveIcon, SpeakerXMarkIcon, EllipsisHorizontalIcon, PlayCircleIcon } from '@heroicons/react/24/solid'
+import { PlayIcon, EllipsisHorizontalIcon, PlayCircleIcon, MusicalNoteIcon } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import styles from '../../styles/Home.module.css'
 
@@ -10,8 +10,8 @@ function index() {
         <div>
             <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8 '>
                 <h1 className='text-2xl font-bold  text-gray-900'>Recently Played</h1>
-                <div>
-                    <div className='relative my-5 h-72  group bg-black w-72 transition duration-300 ease-out  hover:scale-110'>
+                <div className='grid grid-cols-4 my-5 gap-6'>
+                    <div className='relative  h-72  group bg-black w-72 transition duration-300 ease-out  hover:scale-110'>
                         <div className='absolute top-0 right-0 cursor-pointer' >
                             <Image
                                 src={imagelogo}
@@ -22,7 +22,7 @@ function index() {
 
                         </div>
                         {/*<div className='absolute cursor-pointer bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#1d1b1b67] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100'></div> */}
-                        <div className='hidden absolute  z-10  bottom-0 left-0 right-0 top-0 h-full w-full  bg-[#1d1b1b67] bg-fixed opacity-0  hover:opacity-100 text-white group-hover:block transition duration-300 ease-out delay-150 '>
+                        <div className='hidden absolute   bottom-0 left-0 right-0 top-0 h-full w-full  bg-[#1d1b1b67] bg-fixed opacity-0  hover:opacity-100 text-white group-hover:block transition duration-300 ease-out delay-150 '>
                             <div className='flex flex-col justify-center items-center mt-28'>
                                 <PlayCircleIcon className=" h-12 w-12 cursor-pointer mx-auto " aria-hidden="true" />
                                 <p className='text-md '>6 Min English</p>
@@ -56,6 +56,11 @@ function index() {
                                 </Menu>
                             </div>
                         </div>
+
+                    </div>
+                    <div className='bg-gray-300 flex flex-col justify-center items-center w-72 h-72 top-20 text-gray-800/50 px-4 transition duration-300 ease-out  hover:scale-110'>
+                        <MusicalNoteIcon className=" h-20 w-20  mx-auto " aria-hidden="true" />
+                        <p className='text-center'>You will see your recently played music here.</p>
 
                     </div>
                 </div>
