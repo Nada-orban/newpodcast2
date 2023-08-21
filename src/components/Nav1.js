@@ -9,9 +9,11 @@ import { useScrollPosition } from './useScrollPosition'
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
-    { name: 'New Releases', href: '/newrelease', current: true },
-    { name: 'Podcast & Shows', href: '/podcast&shows', current: false },
-    { name: 'Audiobooks', href: '/audiobooks', current: false },
+    { name: 'Design', href: '/design', current: true },
+    { name: 'Development', href: '/development', current: false },
+    { name: 'Design & Dev', href: '/designDev', current: false },
+    { name: 'Business', href: '/business', current: false },
+    { name: 'Lifestyle', href: '/lifestyle', current: false },
     { name: 'My Collection', href: '/mycollection', current: false },
 
 ]
@@ -33,7 +35,7 @@ function Nav1() {
     return (
         <>
             <Disclosure as="nav" className={classNames(
-                scrollPosition ? "sm:py-1" : "sm:py-5", "bg-neutral-950  sticky top-0 py-1 transition duration-200 ease-out "
+                scrollPosition ? "sm:py-1" : "sm:py-5", "bg-neutral-950  sticky top-0 py-1 z-10 transition duration-200 ease-out "
             )}>
                 {({ open }) => (
                     <>

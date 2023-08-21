@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cardsection({ id, title, imagesrc, date }) {
+function Cardsection({ id, name, source, category }) {
 
 
     return (
@@ -8,7 +8,7 @@ function Cardsection({ id, title, imagesrc, date }) {
             <div key={id} className="group relative">
                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                     <imgplaceholder
-                        src={imagesrc}
+                        src={source}
                         alt=""
                         className="h-full w-full object-cover object-center "
                     />
@@ -18,10 +18,10 @@ function Cardsection({ id, title, imagesrc, date }) {
                         <h3 className="text-sm text-gray-700">
                             <a href='#'>
                                 <span aria-hidden="true" className="absolute inset-0" />
-                                {title}
+                                {name}
                             </a>
                         </h3>
-                        <p className="mt-1 text-sm text-gray-500">{date}</p>
+                        <p className="mt-1 text-sm text-gray-500">{category}</p>
                     </div>
 
                 </div>

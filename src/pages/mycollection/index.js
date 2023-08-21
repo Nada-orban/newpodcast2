@@ -4,6 +4,8 @@ import imagelogo from '../../../public/264x264-000000-80-0-0.jpg'
 import { PlayIcon, EllipsisHorizontalIcon, PlayCircleIcon, MusicalNoteIcon } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import styles from '../../styles/Home.module.css'
+import Mycollection from '@/components/Mycollection'
+
 
 function index() {
     return (
@@ -65,6 +67,7 @@ function index() {
                     </div>
                 </div>
             </div>
+            <Mycollection />
         </div>
     )
 }
