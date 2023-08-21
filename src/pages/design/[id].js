@@ -2,15 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 import minenglish from '../../../public/264x264-000000-80-0-0.jpg'
 import styles from '../../styles/Home.module.css'
+import { ArrowUpOnSquareStackIcon } from '@heroicons/react/24/outline'
 
-function Details() {
+function Details({ product }) {
     return (
         <div className='my-12'>
             <div className='container mx-auto'>
                 <div className='grid  grid-cols-3 gap-4'>
                     <div >
                         <Image
-                            src={minenglish}
+
                             width={300}
                             height={300}
                             alt=''
@@ -20,15 +21,15 @@ function Details() {
                             10 episods
                         </p>
                         <hr />
-                        <p className='my-3'>Learn and practise useful English language for everyday situations with the BBC. Your weekly instruction manual for saying or doing something in English is published every Thursday.</p>
+                        <p className='my-3'>{product.description}</p>
 
                     </div>
 
                     <div className='col-span-2'>
                         <div className='mb-40'>
-                            <h1 className='text-2xl font-extrabold'>6 Min English</h1>
-                            <p className='text-md'>BBC Radio</p>
-                            <p className='text-xs text-slate-700/75 '>education</p>
+                            <h1 className='text-2xl font-extrabold'>{product.name}</h1>
+                            <p className='text-md'></p>
+                            <p className='text-xs text-slate-700/75 '>{product.category}</p>
                             {/* <p>rating</p> */}
                         </div>
                         <hr />
@@ -56,3 +57,34 @@ function Details() {
 }
 
 export default Details
+
+
+
+export async function getStaticPaths() {
+    const res = await fetch('http://localhost:3000/api/products');
+    const data = await res.json();
+
+    const paths = data.map(d => {
+        return {
+            params: { id: `${d.id}` }
+        }
+    })
+
+    return {
+        paths: paths,
+        fallback: false,
+    }
+}
+
+
+export async function getStaticProps(context) {
+    const res = await fetch(`http://localhost:3000/api/products/${context.params.id}`);
+    const data = await res.json();
+
+
+    return {
+        props: {
+            product: data
+        }
+    }
+}

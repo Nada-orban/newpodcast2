@@ -4,7 +4,7 @@ import Head from "next/head";
 import Cardsection from '../components/Cardsection';
 import { products } from '../../data'
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <>
       <Head>
@@ -43,4 +43,17 @@ export default function Home() {
     </>
 
   )
+}
+
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3000/api/products');
+  const data = await res.json();
+
+
+  return {
+    props: {
+      products: data
+    }
+  }
 }
