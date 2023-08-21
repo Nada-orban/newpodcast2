@@ -30,7 +30,7 @@ export default Landing
 
 
 export async function getStaticProps() {
-    const res = await fetch('https://newpodcast2.vercel.app/api/products');
+    const res = await fetch('http://localhost:3000/api/products');
     const data = await res.json();
 
 
