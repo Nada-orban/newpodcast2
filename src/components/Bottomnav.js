@@ -22,16 +22,16 @@ function bottomnav() {
                     </div>
                 </div>
                 <div className='flex justify-center items-center gap-5'>
-                    <HandThumbDownIcon className=" h-10 w-10" aria-hidden="true" />
-                    <ArrowUturnLeftIcon className=" h-10 w-10" aria-hidden="true" />
-                    <PlayIcon className=" h-10 w-10" aria-hidden="true" />
-                    <ForwardIcon className=" h-10 w-10" aria-hidden="true" />
-                    <HandThumbUpIcon className=" h-10 w-10" aria-hidden="true" />
+                    <HandThumbDownIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
+                    <ArrowUturnLeftIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
+                    <PlayIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
+                    <ForwardIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
+                    <HandThumbUpIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
 
                 </div>
                 <div className='flex justify-end items-center gap-3'>
                     <p>0:03<span>|</span>3:1</p>
-                    <SpeakerWaveIcon className=" h-10 w-15" aria-hidden="true" />
+                    <SpeakerWaveIcon className=" h-10 w-15 cursor-pointer" aria-hidden="true" />
 
 
                 </div>
