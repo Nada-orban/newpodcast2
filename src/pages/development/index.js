@@ -1,7 +1,8 @@
 import React from 'react'
 import Cardsection from '../../components/Cardsection'
+import { products } from '../../../data'
 
-function index({ products }) {
+function index() {
     const developproducts = products.filter((product) => product.category === "Development")
     return (
         <div>
@@ -28,14 +29,14 @@ function index({ products }) {
 export default index
 
 
-export async function getStaticProps() {
-    const res = await fetch('http://localhost:3000/api/products');
-    const data = await res.json();
+// export async function getStaticProps() {
+//     const res = await fetch('http://localhost:3000/api/products');
+//     const data = await res.json();
 
 
-    return {
-        props: {
-            products: data
-        }
-    }
-}
+//     return {
+//         props: {
+//             products: data
+//         }
+//     }
+// }

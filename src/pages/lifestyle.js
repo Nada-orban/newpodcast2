@@ -1,7 +1,8 @@
 import React from 'react'
 import Cardsection from '../components/Cardsection'
+import { products } from '../../../data'
 
-function lifestyle({ products }) {
+function lifestyle() {
     const lifestyleproducts = products.filter((product) => product.category === "Lifestyle")
     return (
         <div>
@@ -28,14 +29,14 @@ function lifestyle({ products }) {
 export default lifestyle
 
 
-export async function getStaticProps() {
-    const res = await fetch('http://localhost:3000/api/products');
-    const data = await res.json();
+// export async function getStaticProps() {
+//     const res = await fetch('http://localhost:3000/api/products');
+//     const data = await res.json();
 
 
-    return {
-        props: {
-            products: data
-        }
-    }
-}
+//     return {
+//         props: {
+//             products: data
+//         }
+//     }
+// }
