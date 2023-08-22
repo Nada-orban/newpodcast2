@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
@@ -32,6 +32,26 @@ function classNames(...classes) {
 function Nav1() {
     const router = useRouter()
     const scrollPosition = useScrollPosition()
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [visible, setVisible] = useState(true)
+
+    const handleScroll = () => {
+        const currentScrollPos = window.scrollY
+
+        if (currentScrollPos > prevScrollPos) {
+            setVisible(false)
+        } else {
+            setVisible(true)
+        }
+
+        setPrevScrollPos(currentScrollPos)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll)
+    })
 
 
 

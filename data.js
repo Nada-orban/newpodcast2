@@ -412,7 +412,7 @@ export const products = [
         name: "The New Disruptors",
         description: "The New Disruptors tells stories that provide practical inspiration about the way that creative people and producers connect with audiences to perform, cajole, convince, sell, and interact using new methods. Hosted by Glenn Fleishman, a regular contributor to The Economist and the editor and publisher of The Magazine. Produced by Aperiodical LLC.",
         category: "Lifestyle",
-        img: "",
+        img: "https://newdisruptors.s3.amazonaws.com/images/ND_full_iTunes.jpg",
         source: "http://www.muleradio.net/newdisruptors/",
         "itunes": "https://itunes.apple.com/us/podcast/id584939697",
         "rss": "http://feeds.newdisrupt.org/nd"
@@ -422,7 +422,7 @@ export const products = [
         name: "Design Matters",
         description: "Design Matters with Debbie Millman is a thought-provoking internet podcast, which profiles industry-leading graphic designers, change agents, artists, writers and educators. ",
         category: "Design",
-        img: "",
+        img: "https://upload.wikimedia.org/wikipedia/en/e/ed/Design_Matters_Podcast_Cover.jpg",
         source: "http://designobserver.com/topic/designmatters/1039",
         "itunes": "https://itunes.apple.com/au/podcast/design-matters-debbie-millman/id328074695"
     },
@@ -431,7 +431,7 @@ export const products = [
         name: "The Balance",
         description: "Discussing the balance between creativity & everything that fuels it",
         category: "Lifestyle",
-        img: "",
+        img: "https://assets.pippa.io/shows/611e773106c05e78d1f40944/1629706997509-142b11ded37988112b3dda14dcef758b.jpeg",
         source: "http://www.thebalance.cc/",
         "itunes": "https://itunes.apple.com/us/podcast/the-blnce-podcast/id668468786?mt=2",
         "rss": "http://feeds.feedburner.com/TheBlnce"
@@ -441,7 +441,7 @@ export const products = [
         name: "CodePen Radio",
         description: "Chris Coyier, Alex Vazquez, and Tim Sabat, the co-founders of CodePen talk about the ins and outs of running a web software business.",
         category: "Business",
-        img: "",
+        img: "https://i.scdn.co/image/ab6765630000ba8a8963b91871a29dae311761ae",
         source: "http://blog.codepen.io/radio/",
         "itunes": "https://itunes.apple.com/us/podcast/codepen-radio/id824437159",
         "rss": "http://blog.codepen.io/feed/podcast/"
@@ -451,7 +451,7 @@ export const products = [
         name: "Developer Tea",
         description: "Developer Tea is a podcast for web and software developers hosted by a developer that you can listen to in less than 10 minutes. The show will cover a wide variety of topics related to the career of being a developer.",
         category: "Lifestyle",
-        img: "",
+        img: "https://i.scdn.co/image/086c7e47518fbb7905a7709db610ca3cb626c26d",
         source: "http://www.developertea.com/",
         "itunes": "https://itunes.apple.com/us/podcast/developer-tea/id955596067?mt=2",
         "rss": "http://feeds.feedburner.com/developertea"
@@ -461,7 +461,7 @@ export const products = [
         name: "Late Nights with Trav and Los",
         description: "Join Travis and Carlos for a late night discussion about being a healthy and productive professional in todays creative economy. Casual, fun, educational (maybe).",
         category: "Lifestyle",
-        img: "",
+        img: "https://image.simplecastcdn.com/images/49d0e39c-a5e4-4321-aba9-5d4244f90e65/1058549d-50d9-4766-be3b-a1791f74272a/1445217302artwork.jpg",
         source: "http://www.travandlos.com/",
         "itunes": "https://itunes.apple.com/us/podcast/late-nights-with-trav-and-los/id944869246",
         "rss": "http://simplecast.fm/podcasts/311/rss"
@@ -471,7 +471,7 @@ export const products = [
         name: "The Rocketship Podcast",
         description: "Get actionable advice and incredible insights from the business leaders of today and tomorrow. From growth-hacking to sales, customer service to company culture, Rocketship.fm delivers it all every Tuesday and Thursday each week.",
         category: "Business",
-        img: "",
+        img: "https://i.scdn.co/image/ab6765630000ba8ad539d9c42087296884c4401d",
         source: "http://rocketship.fm/",
         "itunes": "https://itunes.apple.com/us/podcast/rocketship-podcast-startups/id808014240",
         "rss": "http://simplecast.fm/podcasts/62/rss"
@@ -481,7 +481,7 @@ export const products = [
         name: "Startup Podcast",
         description: "A series about what it's really like to start a business.",
         category: "Business",
-        img: "",
+        img: "https://gimlet.spotifycdn.com/show_art/fb8f13ed-c712-40f3-9289-d65e248c0f35/fallback.jpg",
         source: "https://gimletmedia.com/show/startup/",
         "itunes": "https://itunes.apple.com/us/podcast/startup-podcast/id913805339",
         "rss": "http://feeds.gimletmedia.com/hearstartup"
@@ -491,7 +491,7 @@ export const products = [
         name: "Viewsources Podcat",
         description: "Viewsources Podcast is another podcast about front-end development and web design. They discuss the important posts and links circulating among our peers and tackle issues that we find ourselves working through day in and day out. Viewsources is hosted by Tim Evko, Charles Peters & Brad Cerasani.",
         category: "Design and Dev",
-        img: "",
+        img: "https://cdns-images.dzcdn.net/images/talk/a5f6fde5adef8b741c4ddabefa69fa13/264x264.jpg",
         source: "https://viewsourc.es/",
         "itunes": "https://itunes.apple.com/us/podcast/viewsources-podcast/id999191388",
         "rss": "http://feeds.feedburner.com/ViewsourcesPodcast?format=xml"
@@ -501,7 +501,7 @@ export const products = [
         name: "Talking Code",
         description: "The Talking Code podcast contains short expert interviews that help you decode what developers are saying. We help non-technical founders, designers, project managers, or anyone who needs a 30,000 foot view of how to run a successful software company.",
         category: "Development",
-        img: "",
+        img: "https://production.listennotes.com/podcasts/talking-code-coderly-aSkN6pG17uU-aw7gSo5FKJn.1400x1400.jpg",
         source: "http://www.talkingcode.com/",
         "itunes": "https://itunes.apple.com/us/podcast/talking-code/id988073177",
         "rss": "http://simplecast.fm/podcasts/150/rss"
@@ -511,7 +511,7 @@ export const products = [
         name: "Nice To Meet You",
         description: "Nice To Meet You is a personal conversation based podcasts with makers, creators and no bullshitters",
         category: "Lifestyle",
-        img: "",
+        img: "https://f.prxu.org/395/images/85d0537f-8432-48bd-890b-82d44014debc/nice_to_meet_you_3000.jpg",
         source: "http://www.vanschneider.com/show/",
         "itunes": "https://itunes.apple.com/us/podcast/nice-to-meet-you/id1050960981?mt=2",
         "soundcloud": "https://soundcloud.com/tobiasvanschneider"
@@ -521,7 +521,7 @@ export const products = [
         name: "Immutable",
         description: "A short, weekly show about design and development hosted by Sam Soffes & Bryn Jackson.",
         category: "Design and Dev",
-        img: "",
+        img: "https://storage.buzzsprout.com/variants/lpx9ozpdg9n4fv4b2ntsxqr7to7j/e70382d1824eed07bf51f8b9742413cd1ad490e9f893e8ff33e49d552d3c73ea.jpg",
         source: "http://spec.fm/podcasts/immutable",
         "itunes": "https://itunes.apple.com/us/podcast/immutable/id1035147995",
         "rss": "http://simplecast.fm/podcasts/1332/rss"
@@ -531,7 +531,7 @@ export const products = [
         name: "Does Not Compute",
         description: "A weekly chat about the lives and workflows of modern web developers, hosted by Sean Washington & Paul Straw.",
         category: "Lifestyle",
-        img: "",
+        img: "https://citap.unc.edu/wp-content/uploads/2022/10/DoesNotCompute-FINAL-1600.png",
         source: "http://spec.fm/podcasts/does-not-compute",
         "itunes": "https://itunes.apple.com/us/podcast/does-not-compute/id1048731980",
         "rss": "http://simplecast.fm/podcasts/1386/rss"
@@ -541,7 +541,7 @@ export const products = [
         name: "Design Details",
         description: "A show about the people who design our favorite products. Hosted by Bryn Jackson and Brian Lovin.",
         category: "Design",
-        img: "",
+        img: "https://image.simplecastcdn.com/images/56e415f0-1911-44b3-9b1c-99551f7146c3/993ebed2-9e1d-4455-8d97-fa64f173572f/3000x3000/1471485006-artwork.jpg?aid=rss_feed",
         source: "http://spec.fm/podcasts/design-details",
         "itunes": "https://itunes.apple.com/us/podcast/design-details/id947191070",
         "rss": "http://simplecast.fm/podcasts/1034/rss"
@@ -551,7 +551,7 @@ export const products = [
         name: "Vicarious",
         description: "Pop culture through the lens of design and vice versa.",
         category: "Lifestyle",
-        img: "",
+        img: "https://i1.sndcdn.com/avatars-4KUfnD6h7Yr6se4N-nB43oQ-t500x500.jpg",
         source: "http://spec.fm/podcasts/vicarious",
         "itunes": "https://itunes.apple.com/us/podcast/vicarious/id1055180013",
         "rss": "http://simplecast.fm/podcasts/1457/rss"
@@ -561,7 +561,7 @@ export const products = [
         name: "Beyond This Point",
         description: "Beyond This Point is a series of conversations engaging the creative thinkers who inspire us. Each episode, Gabriel Stromberg, Creative Director of Civilization, sits down with artists, business owners, designers, and leaders of all types to put a spotlight on different ways of seeing, thinking, and making.",
         category: "Design",
-        img: "",
+        img: "https://i1.sndcdn.com/avatars-000191789095-hf3au8-original.jpg",
         source: "http://beyondthispoint.design/",
         "itunes": "https://itunes.apple.com/us/podcast/beyond-this-point/id1065144310",
         "soundcloud": "https://soundcloud.com/beyondthispoint_design"
@@ -571,7 +571,7 @@ export const products = [
         name: "Layout",
         description: "Layout is a weekly podcast about design, technology, programming and everything else.",
         category: "Design and Dev",
-        img: "",
+        img: "https://layout.fm/layout-artwork.png",
         source: "http://layout.fm/",
         "itunes": "https://itunes.apple.com/ca/podcast/layout/id1050276556",
         "rss": "http://layout.fm/rss"
@@ -581,7 +581,7 @@ export const products = [
         name: "Dorm Room Tycoon",
         description: "Interviews that cut to the chase and extract wisdom. Learning from the most influential innovators. Hosted by William Channer.",
         category: "Business",
-        img: "",
+        img: "https://cdns-images.dzcdn.net/images/talk/bb6158fa23729aa5c83b1ca8ebde5ed8/500x500.jpg",
         source: "http://drt.fm/",
         "itunes": "https://itunes.apple.com/gb/podcast/dorm-room-tycoon/id355125543",
         "soundcloud": "https://soundcloud.com/dormroomtycoon"
@@ -591,7 +591,7 @@ export const products = [
         name: "99U",
         description: "Once in a while, 99U sits down with a leading creative, thinker, or entrepreneur to delve deep into their one-of-a-kind insights about the creative process.",
         category: "Lifestyle",
-        img: "",
+        img: "https://i1.sndcdn.com/artworks-000086756346-i8oxcj-t240x240.jpg",
         source: "http://99u.com/category/podcast",
         "itunes": "https://itunes.apple.com/in/podcast/the-99u-podcast/id886171440?mt=2",
         "soundcloud": "https://soundcloud.com/99u"
@@ -601,7 +601,7 @@ export const products = [
         name: "Style Guide",
         description: "A small batch podcast hosted by Anna Debenham and Brad Frost, dedicated to talking about style guides, pattern libraries and building effective interface systems.",
         category: "Design and Dev",
-        img: "",
+        img: "https://i1.sndcdn.com/avatars-000126521537-8tf6zj-t500x500.jpg",
         source: "http://styleguides.io/podcast/",
         "itunes": "https://itunes.apple.com/gb/podcast/the-style-guide-podcast/id960374773",
         "rss": "http://feeds.soundcloud.com/users/soundcloud:users:134239947/sounds.rss"
