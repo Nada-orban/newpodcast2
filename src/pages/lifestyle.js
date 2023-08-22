@@ -1,6 +1,7 @@
 import React from 'react'
 import Cardsection from '../components/Cardsection'
-// import { products } from '../../../data'
+import { products } from '../../data'
+
 
 function lifestyle() {
     const lifestyleproducts = products.filter((product) => product.category === "Lifestyle")

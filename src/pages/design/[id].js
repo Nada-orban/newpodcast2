@@ -4,7 +4,7 @@ import minenglish from '../../../public/264x264-000000-80-0-0.jpg'
 import styles from '../../styles/Home.module.css'
 import { ArrowUpOnSquareStackIcon } from '@heroicons/react/24/outline'
 
-function Details({ product }) {
+function Details() {
     return (
         <div className='my-12'>
             <div className='container mx-auto '>
