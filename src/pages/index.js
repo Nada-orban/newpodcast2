@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Nav1 from "../components/Nav1";
 import Head from "next/head";
 import Cardsection from '../components/Cardsection';
-import { products } from '../../data'
+// import { products } from '../../data'
 import Link from 'next/link'
 
-export default function Home() {
+export default function Home({ products }) {
   const designproducts = products.filter((product) => product.category === "Design")
   const designdevproducts = products.filter((product) => product.category === "Design and Dev")
   const businessproducts = products.filter((product) => product.category === "Business")
@@ -111,14 +111,14 @@ export default function Home() {
 }
 
 
-// export async function getStaticProps() {
-//   const res = await fetch('http://localhost:3000/api/products');
-//   const data = await res.json();
+export async function getStaticProps() {
+  const res = await fetch('https://newpodcast2.vercel.app/api/products');
+  const data = await res.json();
 
 
-//   return {
-//     props: {
-//       products: data
-//     }
-//   }
-// }
+  return {
+    props: {
+      products: data
+    }
+  }
+}

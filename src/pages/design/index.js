@@ -1,8 +1,8 @@
 import React from 'react'
 import Cardsection from '../../components/Cardsection'
-import { products } from '../../../data'
+// import { products } from '../../../data'
 
-function Landing() {
+function Landing({ products }) {
     const designproducts = products.filter((product) => product.category === "Design")
 
     return (
@@ -30,14 +30,14 @@ function Landing() {
 export default Landing
 
 
-// export async function getStaticProps() {
-//     const res = await fetch('http://localhost:3000/api/products');
-//     const data = await res.json();
+export async function getStaticProps() {
+    const res = await fetch('https://newpodcast2.vercel.app/api/products');
+    const data = await res.json();
 
 
-//     return {
-//         props: {
-//             products: data
-//         }
-//     }
-// }
+    return {
+        props: {
+            products: data
+        }
+    }
+}
