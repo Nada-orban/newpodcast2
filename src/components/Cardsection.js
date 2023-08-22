@@ -17,7 +17,7 @@ function Cardsection({ id, name, source, img, category }) {
                     <div>
                         <h3 className="text-sm text-gray-700">
                             <a
-                            // href={`/design/${id}`}
+                                href={`/design/${id}`}
                             >
                                 <span aria-hidden="true" className="absolute inset-0" />
                                 {name}
