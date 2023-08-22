@@ -1,42 +1,21 @@
-// import React from 'react'
-
-// function hi() {
-//     return (
-//         <div>
-
-//         </div>
-//     )
-// }
-
-// export default hi
-
-
-
-
-
-
-
-
-
-
 
 import React from 'react'
 import Image from 'next/image'
 import minenglish from '../../../public/264x264-000000-80-0-0.jpg'
 import styles from '../../styles/Home.module.css'
-import { ArrowUpOnSquareStackIcon } from '@heroicons/react/24/outline'
+import { PlayIcon } from '@heroicons/react/24/outline'
 
 function Details({ product }) {
     return (
         <div className='my-12'>
             <div className='container mx-auto '>
-                <div className='mx-auto max-w-2xl px-7  sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8'>
-                    <div className='grid   grid-cols-1 gap-4 sm:grid-cols-3'>
+                <div className='mx-auto max-w-2xl px-7  sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8'>
+                    <div className='grid   grid-cols-1 gap-7 sm:grid-cols-2'>
                         <div >
                             <img
                                 src={product.img}
                                 alt=''
-                                className='h-72 w-72 object-cover object-center '
+                                className='h-72 w-72 object-cover object-center mx-auto '
                             />
                             <p className='text-slate-700/75 my-3 text-xs'>
                                 10 episods
@@ -46,7 +25,7 @@ function Details({ product }) {
 
                         </div>
 
-                        <div className='col-span-2'>
+                        <div className=''>
                             <div className='mb-40'>
                                 <h1 className='text-2xl font-extrabold'>{product.name}</h1>
                                 <p className='text-md'></p>
@@ -61,8 +40,11 @@ function Details({ product }) {
                                         are you unhappy at work?
                                     </h4>
                                     <p className='text-xs text-slate-700/75'>how can jobs change so that workers are happier?</p>
-                                    <div className='flex items-center gap-4'>
-                                        <button>play</button>
+                                    <div className='flex items-center gap-3 mt-2'>
+                                        <button className='flex gap-1 px-3 items-center border rounded-full border-slate-200 text-sky-700 bg-slate-200  hover:bg-sky-700 hover:text-white' >
+                                            <PlayIcon className="block h-4 w-4 " aria-hidden="true" />
+                                            <p className='text-sm font-bold'>play</p>
+                                        </button>
                                         <p className='text-xs text-slate-800/50'>6 min</p>
                                     </div>
                                 </div>
