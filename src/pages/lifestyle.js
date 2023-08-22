@@ -3,7 +3,7 @@ import Cardsection from '../components/Cardsection'
 import { products } from '../../data'
 
 
-function lifestyle() {
+function lifestyle({ products }) {
     const lifestyleproducts = products.filter((product) => product.category === "Lifestyle")
     return (
         <div>
@@ -30,14 +30,14 @@ function lifestyle() {
 export default lifestyle
 
 
-// export async function getStaticProps() {
-//     const res = await fetch('http://localhost:3000/api/products');
-//     const data = await res.json();
+export async function getStaticProps() {
+    const res = await fetch('https://newpodcast2.vercel.app/api/products');
+    const data = await res.json();
 
 
-//     return {
-//         props: {
-//             products: data
-//         }
-//     }
-// }
+    return {
+        props: {
+            products: data
+        }
+    }
+}
