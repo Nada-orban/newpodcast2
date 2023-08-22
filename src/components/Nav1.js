@@ -80,7 +80,7 @@ function Nav1() {
                                 </div>
                                 <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2  inset-y-1'>
                                     <h1 className={classNames(
-                                        scrollPosition ? 'sm:text-xl' : ' sm:text-3xl', 'text-white text-xl  font-black'
+                                        scrollPosition ? 'sm:text-xl' : ' sm:text-3xl', 'text-white text-xl  font-black '
                                     )}>PODCAST</h1>
                                 </div>
 

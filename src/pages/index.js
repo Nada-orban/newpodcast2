@@ -3,6 +3,7 @@ import Nav1 from "../components/Nav1";
 import Head from "next/head";
 import Cardsection from '../components/Cardsection';
 import { products } from '../../data'
+import Link from 'next/link'
 
 export default function Home({ products }) {
   const designproducts = products.filter((product) => product.category === "Design")
@@ -28,57 +29,75 @@ export default function Home({ products }) {
       </Head>
 
       <div>
-        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
+        <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8 container">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Design</h2>
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {designproducts.map((product) => {
+            <div className='flex justify-between items-center'>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Design</h2>
+              <Link href='/design' className='hover:underline hover:underline-offset-4'>View All</Link>
+            </div>
+            <div className="mt-6 mx-auto grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {designproducts.slice(0, 4).map((product) => {
                 return (
                   <Cardsection key={product.id} {...product} />
                 )
               })}
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Design & Dev</h2>
+          <div className='my-20'>
+            <div className='flex justify-between items-center'>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Development</h2>
+              <Link href='/development' className='hover:underline hover:underline-offset-4'>View All</Link>
+            </div>
+
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {designdevproducts.map((product) => {
+              {developproducts.slice(0, 4).map((product) => {
                 return (
                   <Cardsection key={product.id} {...product} />
                 )
               })}
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Business</h2>
+          <div className='my-20'>
+            <div className='flex justify-between items-center'>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Design & Dev</h2>
+              <Link href='/designDev' className='hover:underline hover:underline-offset-4'>View All</Link>
+            </div>
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {businessproducts.map((product) => {
+              {designdevproducts.slice(0, 4).map((product) => {
                 return (
                   <Cardsection key={product.id} {...product} />
                 )
               })}
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Lifestyle</h2>
+          <div className='my-20'>
+            <div className='flex justify-between items-center'>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Business</h2>
+              <Link href='/business' className='hover:underline hover:underline-offset-4'>View All</Link>
+            </div>
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {lifestyleproducts.map((product) => {
+              {businessproducts.slice(0, 4).map((product) => {
                 return (
                   <Cardsection key={product.id} {...product} />
                 )
               })}
             </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 mt-16 mb-2">Development</h2>
+          <div className='my-20'>
+            <div className='flex justify-between items-center'>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900  mb-2">Lifestyle</h2>
+              <Link href='/lifestyle' className='hover:underline hover:underline-offset-4'>View All</Link>
+            </div>
+
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-              {developproducts.map((product) => {
+              {lifestyleproducts.slice(0, 4).map((product) => {
                 return (
                   <Cardsection key={product.id} {...product} />
                 )
               })}
             </div>
           </div>
+
 
         </div>
 
