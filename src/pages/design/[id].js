@@ -1,3 +1,25 @@
+import React from 'react'
+
+function hi() {
+    return (
+        <div>
+
+        </div>
+    )
+}
+
+export default hi
+
+
+
+
+
+
+
+
+
+
+
 // import React from 'react'
 // import Image from 'next/image'
 // import minenglish from '../../../public/264x264-000000-80-0-0.jpg'
