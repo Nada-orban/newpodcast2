@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Nav2 from '@/components/Nav2'
 import { products } from '../../data'
+import Link from 'next/link';
 
 function search() {
     const [input, setInput] = useState("");
@@ -35,16 +36,20 @@ function search() {
                                 return (
                                     <>
 
-                                        <div className='grid grid-cols-1 sm:grid-cols-2 mx-auto px-4 py-5 sm:px-auto sm:py-5 '>
+                                        <div className='grid grid-cols-1 sm:grid-cols-2  px-4 py-5 sm:px-auto sm:py-5 gap-4 '>
                                             <div>
-                                                <img
-                                                    src={product.img}
-                                                    alt=""
-                                                    className="h-24 w-24 object-cover object-start mx-auto border"
-                                                />
+                                                <Link href={`/design/${product.id}`}>
+                                                    <img
+                                                        src={product.img}
+                                                        alt=""
+                                                        className="h-24 w-24 object-cover object-end mr-16 mx-auto border"
+                                                    />
+                                                </Link>
                                             </div>
                                             <div>
-                                                <p className='text-md font-bold'>{product.name}</p>
+                                                <Link href={`/design/${product.id}`}>
+                                                    <p className='text-md font-bold'>{product.name}</p>
+                                                </Link>
                                                 <p className='text-sm'>{product.category}</p>
                                             </div>
 
