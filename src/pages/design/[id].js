@@ -18,7 +18,7 @@ function Details({ product }) {
                                 <img
                                     src={product.img}
                                     alt=''
-                                    className='h-72 w-72 object-cover object-center mx-auto '
+                                    className='h-72 w-72 object-cover object-center mx-auto  border'
                                 />
                                 <p className='text-slate-700/75 my-3 text-xs'>
                                     10 episods
