@@ -43,10 +43,12 @@ function Nav2() {
                                     )}
                                 </Disclosure.Button>
                             </div>
-                            <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 sm:left-12 sm:px-auto '>
-                                <h1 className='text-white text-xl  font-black '
-                                >PODCAST</h1>
-                            </div>
+                            <Link href='/'>
+                                <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 sm:left-12 sm:px-auto '>
+                                    <h1 className='text-white text-xl  font-black '
+                                    >PODCAST</h1>
+                                </div>
+                            </Link>
 
                             <div className="hidden  sm:block absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2  inset-y-1">
                                 <div className="flex justify-center items-center gap-4 pt-1 ">
