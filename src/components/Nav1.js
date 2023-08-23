@@ -87,15 +87,26 @@ function Nav1() {
 
 
 
-                                <div className="absolute  flex items-center  right-0 inset-y-5  ">
-                                    <button
-                                        type="button"
-                                        className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                    >
-                                        <span className="absolute -inset-1.5" />
-                                        <span className="sr-only">View notifications</span>
-                                        <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
-                                    </button>
+                                <div className="absolute  flex items-center  right-0 inset-y-5  justify-between">
+                                    <Link href='/search'>
+                                        <button
+                                            type="button"
+                                            className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800  "
+                                        >
+                                            <span className="absolute -inset-1.5" />
+                                            <span className="sr-only">View notifications</span>
+
+                                            <MagnifyingGlassIcon className=" h-6 w-6 " aria-hidden="true" />
+
+
+
+                                        </button>
+                                    </Link>
+
+                                    {/* <div className='relative bg-red-400  w-1 focus:w-40 '>
+                                        <input type='search' className='absolute  top-0 left-4    bg-gray-800 p-1 pl-6 rounded-full  text-gray-400 hover:text-white' />
+                                        <MagnifyingGlassIcon className="absolute  top-1 left-4 h-6 w-5 text-gray-400 hover:text-white" aria-hidden="true" />
+                                    </div> */}
 
                                     {/* Profile dropdown */}
                                     <Menu as="div" className="relative ml-3">

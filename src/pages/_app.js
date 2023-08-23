@@ -6,7 +6,7 @@ import Bottomnav from '@/components/Bottomnav'
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Nav1 />
+      {/* <Nav1 /> */}
       <Component {...pageProps} />
 
 

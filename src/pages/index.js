@@ -27,6 +27,7 @@ export default function Home({ products }) {
           rel="stylesheet"
         />
       </Head>
+      <Nav1 />
 
       <div>
         <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8 container">
