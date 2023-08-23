@@ -5,6 +5,7 @@ import minenglish from '../../../public/264x264-000000-80-0-0.jpg'
 import styles from '../../styles/Home.module.css'
 import { PlayIcon } from '@heroicons/react/24/outline'
 import Nav2 from '@/components/Nav2'
+import Link from 'next/link'
 
 function Details({ product }) {
     return (
@@ -18,25 +19,28 @@ function Details({ product }) {
                                 <img
                                     src={product.img}
                                     alt=''
-                                    className='h-72 w-72 object-cover object-center mx-auto  border'
+                                    className='h-72 w-72 object-cover object-center mx-auto  border rounded-lg'
                                 />
-                                <p className='text-slate-700/75 my-3 text-xs'>
-                                    10 episods
-                                </p>
-                                <hr />
-                                <p className='my-3'>{product.description}</p>
+
 
                             </div>
 
-                            <div className=''>
-                                <div className='mb-40'>
-                                    <h1 className='text-2xl font-extrabold'>{product.name}</h1>
-                                    <p className='text-md'></p>
-                                    <p className='text-xs text-slate-700/75 '>{product.category}</p>
-                                    {/* <p>rating</p> */}
-                                </div>
+                            <div >
+
+                                <h1 className='text-2xl font-extrabold mb-2'>{product.name}</h1>
+                                <p className='text-xs text-slate-700/75 mb-1'>{product.category}</p>
+                                {/* <p className='text-slate-700/75 my-3 text-xs'>
+                                    10 episods
+                                </p> */}
                                 <hr />
-                                <div className='flex flex-col'>
+                                <p className='my-3'>{product.description}</p>
+                                <div className='flex items-center gap-2'>
+                                    <Link href={product.itunes}>iTunes</Link>
+                                    <p>-</p>
+                                    <Link href={product.rss}>RSS</Link>
+                                </div>
+
+                                {/* <div className='flex flex-col'>
                                     <div className='my-4'>
                                         <h6 className='text-xs text-slate-700/75 '>Aug 17, 2023</h6>
                                         <h4 className='font-medium text-xl'>
@@ -52,8 +56,8 @@ function Details({ product }) {
                                         </div>
                                     </div>
                                     <hr />
+                                </div> */}
 
-                                </div>
 
                             </div>
                         </div>

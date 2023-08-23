@@ -42,7 +42,7 @@ function search() {
                                                     <img
                                                         src={product.img}
                                                         alt=""
-                                                        className="h-24 w-24 object-cover object-end mr-16 mx-auto border"
+                                                        className="h-24 w-24 object-cover object-end mr-16 mx-auto border rounded-lg"
                                                     />
                                                 </Link>
                                             </div>

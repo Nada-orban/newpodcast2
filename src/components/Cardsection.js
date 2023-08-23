@@ -10,7 +10,7 @@ function Cardsection({ id, name, source, img, category }) {
                     <img
                         src={img}
                         alt=""
-                        className="h-72 w-72 object-cover object-center mx-auto border "
+                        className="h-72 w-72 object-cover object-center mx-auto border rounded-lg"
                     />
                 </div>
                 <div className="mt-4 flex justify-between">
