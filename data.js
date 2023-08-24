@@ -84,7 +84,7 @@ export const products = [
         img: "https://assets.libsyn.com/content/6158118?height=250&width=250",
         source: "http://uxdiscoverysession.com/",
         itunes: "https://itunes.apple.com/ca/podcast/discovery-session...-by-gerard/id693746926?mt=2&ign-mpt=uo%3D4",
-        "soundcloud": "https://soundcloud.com/uxdiscoverysession"
+        soundcloud: "https://soundcloud.com/uxdiscoverysession"
     },
     {
         id: 9,
@@ -251,7 +251,7 @@ export const products = [
         img: "https://i.scdn.co/image/ab6765630000ba8ac0486a9c17592b205f2a2c75",
         source: "http://avclark.com/tgm/",
         itunes: "https://itunes.apple.com/us/podcast/gently-mad-life-business-entrepreneurship/id950222137",
-        "soundcloud": "https://soundcloud.com/thegentlymad",
+        soundcloud: "https://soundcloud.com/thegentlymad",
         rss: "http://tgmpodcast.libsyn.com/rss"
     },
     {
@@ -281,7 +281,7 @@ export const products = [
         img: "https://i.scdn.co/image/ab6765630000ba8a82183df56c568e12dbeff6c2",
         source: "http://www.designreviewpodcast.com/",
         itunes: "https://itunes.apple.com/us/podcast/design-review/id947753823?mt=2",
-        "soundcloud": "https://soundcloud.com/design-review",
+        soundcloud: "https://soundcloud.com/design-review",
         rss: "http://www.designreviewpodcast.com/design-review.rss"
     },
     {
@@ -313,7 +313,7 @@ export const products = [
         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/99%25_Invisible_logo.svg/1200px-99%25_Invisible_logo.svg.png",
         source: "http://99percentinvisible.org/",
         itunes: "https://itunes.apple.com/us/podcast/id394775318",
-        "soundcloud": "https://soundcloud.com/roman-mars/",
+        soundcloud: "https://soundcloud.com/roman-mars/",
         rss: "http://99percentinvisible.org/feed/"
     },
     {
@@ -334,7 +334,7 @@ export const products = [
         img: "https://i.scdn.co/image/ab6765630000ba8a40de036639881352baa593c6",
         source: "https://fizzle.co/show",
         itunes: "https://itunes.apple.com/us/podcast/fizzle-show-honest-online/id656726654",
-        "soundcloud": "https://soundcloud.com/fizzleco/sets/the-fizzle-show",
+        soundcloud: "https://soundcloud.com/fizzleco/sets/the-fizzle-show",
         rss: "http://feeds.soundcloud.com/users/soundcloud:users:71269227/sounds.rss"
     },
     {
@@ -355,7 +355,7 @@ export const products = [
         img: "https://i1.sndcdn.com/avatars-k7izvHAlX8jbV0eW-JnzFSA-original.jpg",
         source: "http://pencilvspixel.com/",
         itunes: "https://itunes.apple.com/us/podcast/pencil-vs-pixel/id731298028#",
-        "soundcloud": "https://soundcloud.com/pencilvspixel"
+        soundcloud: "https://soundcloud.com/pencilvspixel"
     },
     {
         id: 36,
@@ -514,7 +514,7 @@ export const products = [
         img: "https://f.prxu.org/395/images/85d0537f-8432-48bd-890b-82d44014debc/nice_to_meet_you_3000.jpg",
         source: "http://www.vanschneider.com/show/",
         itunes: "https://itunes.apple.com/us/podcast/nice-to-meet-you/id1050960981?mt=2",
-        "soundcloud": "https://soundcloud.com/tobiasvanschneider"
+        soundcloud: "https://soundcloud.com/tobiasvanschneider"
     },
     {
         id: 52,
@@ -564,7 +564,7 @@ export const products = [
         img: "https://i1.sndcdn.com/avatars-000191789095-hf3au8-original.jpg",
         source: "http://beyondthispoint.design/",
         itunes: "https://itunes.apple.com/us/podcast/beyond-this-point/id1065144310",
-        "soundcloud": "https://soundcloud.com/beyondthispoint_design"
+        soundcloud: "https://soundcloud.com/beyondthispoint_design"
     },
     {
         id: 57,
@@ -584,7 +584,7 @@ export const products = [
         img: "https://cdns-images.dzcdn.net/images/talk/bb6158fa23729aa5c83b1ca8ebde5ed8/500x500.jpg",
         source: "http://drt.fm/",
         itunes: "https://itunes.apple.com/gb/podcast/dorm-room-tycoon/id355125543",
-        "soundcloud": "https://soundcloud.com/dormroomtycoon"
+        soundcloud: "https://soundcloud.com/dormroomtycoon"
     },
     {
         id: 59,
@@ -594,7 +594,7 @@ export const products = [
         img: "https://i1.sndcdn.com/artworks-000086756346-i8oxcj-t240x240.jpg",
         source: "http://99u.com/category/podcast",
         itunes: "https://itunes.apple.com/in/podcast/the-99u-podcast/id886171440?mt=2",
-        "soundcloud": "https://soundcloud.com/99u"
+        soundcloud: "https://soundcloud.com/99u"
     },
     {
         id: 60,
@@ -634,7 +634,7 @@ export const products = [
         img: "https://is1-ssl.mzstatic.com/image/thumb/Podcasts115/v4/92/f6/d9/92f6d951-9309-70d3-3c15-ec8562d1f4e7/mza_13055049974423435604.jpg/1200x630wp.png",
         source: "http://hacktostart.com/",
         itunes: "https://itunes.apple.com/ca/podcast/hacktostart/id929857801",
-        "soundcloud": "https://soundcloud.com/hacktostart",
+        soundcloud: "https://soundcloud.com/hacktostart",
         rss: "http://hacktostart.com/rss/"
     },
     {
@@ -645,7 +645,7 @@ export const products = [
         img: "https://content.production.cdn.art19.com/images/20/f7/10/3d/20f7103d-0569-4a12-8b99-97adfa839b21/a6ef51b2982256d97195284c99a012f6890a40d50d3075ce8342ddca6ba995834398497da60f127cdd0419f0c3c7683c2bdaf421f40f553e589e270018e64cbe.jpeg",
         source: "https://www.intercom.io/podcast",
         itunes: "https://itunes.apple.com/ie/podcast/inside-intercom-podcast/id996103731",
-        "soundcloud": "https://soundcloud.com/intercom/"
+        soundcloud: "https://soundcloud.com/intercom/"
     },
     {
         id: 65,

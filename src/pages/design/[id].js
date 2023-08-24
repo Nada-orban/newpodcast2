@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import minenglish from '../../../public/264x264-000000-80-0-0.jpg'
 import styles from '../../styles/Home.module.css'
@@ -8,6 +8,71 @@ import Nav2 from '@/components/Nav2'
 import Link from 'next/link'
 
 function Details({ product }) {
+
+
+
+
+    const showitunes = (show) => {
+        if (typeof show != "undefined") {
+            return (
+                <div>
+                    <a href={product.itunes} className='font-bold text-md text-sky-400  hover:underline hover:underline-offset-4'>iTunes</a>
+
+                </div>
+
+            )
+        }
+
+    }
+    const showrss = (show) => {
+        if (typeof show != "undefined") {
+            return (
+                <div>
+                    <a href={product.rss} className='font-bold text-md text-sky-400  hover:underline hover:underline-offset-4'>Rss</a>
+
+                </div>
+
+            )
+        }
+
+    }
+    const showsoundcloud = (show) => {
+        if (typeof show != "undefined") {
+            return (
+                <div>
+                    <a href={product.soundcloud} className='font-bold text-md text-sky-400  hover:underline hover:underline-offset-4'>Soundcloud</a>
+
+                </div>
+
+            )
+        }
+
+    }
+    const showandroid = (show) => {
+        if (typeof show != "undefined") {
+            return (
+                <div>
+                    <a href={product.android} className='font-bold text-md text-sky-400  hover:underline hover:underline-offset-4'>Android</a>
+
+                </div>
+
+            )
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <>
             <Nav2 />
@@ -34,10 +99,15 @@ function Details({ product }) {
                                 </p> */}
                                 <hr />
                                 <p className='my-3'>{product.description}</p>
-                                <div className='flex items-center gap-2'>
-                                    <Link href={product.itunes}>iTunes</Link>
-                                    <p>-</p>
-                                    <Link href={product.rss}>RSS</Link>
+                                <div className='flex items-center gap-5'>
+                                    {showitunes(product.itunes)}
+                                    {showrss(product.rss)}
+                                    {showsoundcloud(product.soundcloud)}
+                                    {showandroid(product.android)}
+
+
+
+
                                 </div>
 
                                 {/* <div className='flex flex-col'>
