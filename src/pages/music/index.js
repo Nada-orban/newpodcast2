@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav2 from '@/components/Nav2'
 import Songsection from '@/components/songsection'
+import { songs } from '../../../songs'
 
 function index({ songs }) {
     return (
@@ -31,14 +32,14 @@ function index({ songs }) {
 
 export default index
 
-export async function getStaticProps() {
-    const res = await fetch('http://localhost:3000/api/songs');
-    const data = await res.json();
+// export async function getStaticProps() {
+//     const res = await fetch('https://newpodcast2.vercel.app/api/songs');
+//     const data = await res.json();
 
 
-    return {
-        props: {
-            songs: data
-        }
-    }
-}
+//     return {
+//         props: {
+//             songs: data
+//         }
+//     }
+// }
