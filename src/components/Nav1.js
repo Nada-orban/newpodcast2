@@ -11,12 +11,13 @@ import { useRouter } from 'next/router'
 
 const navigation = [
     { name: 'Home', href: '/' },
+    { name: 'Music', href: '/music' },
     { name: 'Design', href: '/design' },
     { name: 'Development', href: '/development' },
     { name: 'Design & Dev', href: '/designDev' },
     { name: 'Business', href: '/business' },
     { name: 'Lifestyle', href: '/lifestyle' },
-    { name: 'My Collection', href: '/mycollection' },
+    // { name: 'My Collection', href: '/mycollection' },
 
 ]
 
