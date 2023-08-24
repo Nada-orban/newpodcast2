@@ -32,7 +32,7 @@ function index({ songs }) {
 export default index
 
 export async function getStaticProps() {
-    const res = await fetch('https://newpodcast2.vercel.app/api/songs');
+    const res = await fetch('http://localhost:3000/api/songs');
     const data = await res.json();
 
 

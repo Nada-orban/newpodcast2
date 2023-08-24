@@ -45,7 +45,7 @@ export default songid
 
 
 export async function getStaticPaths() {
-    const res = await fetch('https://newpodcast2.vercel.app/api/songs');
+    const res = await fetch('http://localhost:3000/api/songs');
     const data = await res.json();
 
     const paths = data.map(d => {
@@ -62,7 +62,7 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps(context) {
-    const res = await fetch(`https://newpodcast2.vercel.app/api/songs/${context.params.id}`);
+    const res = await fetch(`http://localhost:3000/api/songs/${context.params.id}`);
     const data = await res.json();
 
 
