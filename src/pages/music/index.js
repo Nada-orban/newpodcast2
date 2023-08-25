@@ -5,6 +5,8 @@ import Songsection from '@/components/songsection'
 import Artists from '@/components/Artists'
 
 
+
+
 const artists = []
 const finalartists = []
 
@@ -17,22 +19,10 @@ function handleartists(bigarray) {
             if (!finalartists.includes(authorname)) {
                 finalartists.push(authorname)
                 artists.push(element)
-
             }
-
-
-
-
         }
-
-
-
     });
     return artists;
-
-
-
-
 }
 
 // function getfinalartists(artists) {
