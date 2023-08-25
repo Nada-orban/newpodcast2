@@ -50,8 +50,8 @@ function handleartists(bigarray) {
 
 
 function index({ songs }) {
-    console.log(artists)
-    console.log(finalartists)
+    // console.log(artists)
+    // console.log(finalartists)
     handleartists(songs)
     // getfinalartists(artists)
 
