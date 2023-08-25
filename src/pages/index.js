@@ -2,10 +2,11 @@ import Image from 'next/image'
 import Nav1 from "../components/Nav1";
 import Head from "next/head";
 import Cardsection from '../components/Cardsection';
+import Songsection from '@/components/songsection';
 // import { products } from '../../data'
 import Link from 'next/link'
 
-export default function Home({ products }) {
+export default function Home({ products, songs }) {
   const designproducts = products.filter((product) => product.category === "Design")
   const designdevproducts = products.filter((product) => product.category === "Design and Dev")
   const businessproducts = products.filter((product) => product.category === "Business")
@@ -32,6 +33,19 @@ export default function Home({ products }) {
       <div>
         <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8 container">
           <div>
+            <div className='flex justify-between items-center'>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900  ">Songs</h2>
+              <Link href='/music' className='hover:underline hover:underline-offset-4'>View All</Link>
+            </div>
+            <div className="mt-6 mx-auto grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {songs.slice(0, 4).map((song) => {
+                return (
+                  <Songsection key={song.id} {...song} />
+                )
+              })}
+            </div>
+          </div>
+          <div className='my-20'>
             <div className='flex justify-between items-center'>
               <h2 className="text-2xl font-bold tracking-tight text-gray-900  ">Design</h2>
               <Link href='/design' className='hover:underline hover:underline-offset-4'>View All</Link>
@@ -114,12 +128,18 @@ export default function Home({ products }) {
 
 export async function getStaticProps() {
   const res = await fetch('https://newpodcast2.vercel.app/api/products');
+  const songs = await fetch('https://newpodcast2.vercel.app/api/songs');
+  const songsdata = await songs.json();
   const data = await res.json();
 
 
   return {
     props: {
-      products: data
+      products: data,
+      songs: songsdata,
     }
   }
 }
+
+
+
