@@ -14,11 +14,11 @@ function songid({ song }) {
                     <div className='mx-auto max-w-2xl px-7  sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8'>
                         <div className='grid   grid-cols-1 gap-7 sm:grid-cols-2'>
                             <div >
-                                {/* <img
-                                    src={product.img}
+                                <img
+                                    src={song.link.images[1].url}
                                     alt=''
                                     className='h-72 w-72 object-cover object-center mx-auto  border rounded-lg'
-                                /> */}
+                                />
 
 
                             </div>
