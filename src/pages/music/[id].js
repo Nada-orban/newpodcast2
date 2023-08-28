@@ -1,9 +1,10 @@
 
-
-
 import React from 'react'
 import Nav2 from '@/components/Nav2'
 import Link from 'next/link'
+import Bottomnav from '@/components/Bottomnav'
+
+
 
 function songid({ song }) {
     return (
@@ -23,15 +24,17 @@ function songid({ song }) {
 
                             </div>
 
-                            <div >
+                            <div className='mt-4 text-center sm:text-start '>
 
                                 <h1 className='text-2xl font-extrabold mb-2'>{song.name}</h1>
                                 <p className='text-xs text-slate-700/75 mb-1'>{song.author}</p>
                                 {/* <p className='text-slate-700/75 my-3 text-xs'>
                                     10 episods
                                 </p> */}
-                                <audio controls>
-                                    <source src={song.url} type="audio/ogg" />
+                                {/* <Bottomnav song={song.url} /> */}
+
+                                <audio id={song.id} controls className='bg-gray-100 w-full rounded-lg mt-5  '>
+                                    <source src={song.url} type="audio/ogg" className='' />
                                     Your browser does not support the audio element.
 
                                 </audio>
