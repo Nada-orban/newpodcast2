@@ -56,7 +56,8 @@ function artistid({ song }) {
                                                 className='w-20 h-20 rounded-lg border'
                                             />
                                         </div>
-                                        <p className='text-sm'>{songlo.name}</p>
+                                        <a href={`/music/${songlo.id}`}><p className='text-sm hover:underline hover:underline-offset-2'>{songlo.name}</p></a>
+
                                     </div>
                                 )
 
