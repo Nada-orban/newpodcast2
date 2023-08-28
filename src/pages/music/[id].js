@@ -27,7 +27,9 @@ function songid({ song }) {
                             <div className='mt-4 text-center sm:text-start '>
 
                                 <h1 className='text-2xl font-extrabold mb-2'>{song.name}</h1>
-                                <p className='text-xs text-slate-700/75 mb-1'>{song.author}</p>
+                                <a href={`/artists/${song.id}`} >
+                                    <p className='text-xs text-slate-700/75 mb-1 hover:underline hover:underline-offset-2'>{song.author}</p>
+                                </a>
                                 {/* <p className='text-slate-700/75 my-3 text-xs'>
                                     10 episods
                                 </p> */}
