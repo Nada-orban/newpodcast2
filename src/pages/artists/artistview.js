@@ -1,10 +1,10 @@
 import React from 'react'
-import Artistspage from '../artistspage'
+// import Artistspage from '../artistspage'
 
 function artistview() {
     return (
         <div>
-            <Artistspage />
+            {/* <Artistspage /> */}
 
         </div>
     )
