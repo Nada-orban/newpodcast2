@@ -3,7 +3,6 @@ import Nav2 from '@/components/Nav2'
 import { products } from '../../data'
 import { songs } from '../../songs'
 import Link from 'next/link';
-import Searchsection from '@/components/Searchsection';
 import { Tab } from '@headlessui/react'
 
 

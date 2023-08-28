@@ -30,6 +30,11 @@ function songid({ song }) {
                                 {/* <p className='text-slate-700/75 my-3 text-xs'>
                                     10 episods
                                 </p> */}
+                                <audio controls>
+                                    <source src={song.url} type="audio/ogg" />
+                                    Your browser does not support the audio element.
+
+                                </audio>
 
 
 
