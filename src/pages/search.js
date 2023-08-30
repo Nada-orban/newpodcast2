@@ -48,7 +48,7 @@ function search() {
         <>
             <Nav2 />
             <div className='overflow-hidden'>
-                <div className='pb-24 '>
+                <div className='pb-52 '>
                     <div as='nav' className='w-full h-40 bg-zinc-900 relative'>
                         <input type='search'
                             className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 p-5 text-xl  bg-zinc-900 text-white '
