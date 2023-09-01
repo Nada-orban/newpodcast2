@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav2 from '@/components/Nav2'
 import Songsection from '@/components/songsection'
 // import { songs } from '../../../songs'
@@ -43,6 +43,7 @@ function index({ songs }) {
     // console.log(artists)
     // console.log(finalartists)
     handleartists(songs)
+    const [show, setShow] = useState(false)
     // getfinalartists(artists)
 
 
@@ -53,7 +54,9 @@ function index({ songs }) {
             <Nav2 />
             <div>
                 <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">Songs</h2>
+
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-900  ">Songs</h2>
+
 
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {songs.map((song) => {
@@ -67,11 +70,9 @@ function index({ songs }) {
             </div>
             <div>
                 <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8 ">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">Top artists</h2>
-
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-900  ">Top artists</h2>
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 mx-auto">
                         {artists.map((artist) => {
-
                             return (
                                 <Artists key={artist.id} {...artist} />
                             )

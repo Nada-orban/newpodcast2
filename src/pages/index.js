@@ -5,6 +5,29 @@ import Cardsection from '../components/Cardsection';
 import Songsection from '@/components/songsection';
 // import { products } from '../../data'
 import Link from 'next/link'
+import Artists from '@/components/Artists'
+
+
+
+
+const artists = []
+const finalartists = []
+
+
+function handleartists(bigarray) {
+  var authorname = ''
+  bigarray.forEach(element => {
+    if (element.author !== authorname) {
+      authorname = element.author
+      if (!finalartists.includes(authorname)) {
+        finalartists.push(authorname)
+        artists.push(element)
+      }
+    }
+  });
+  return artists;
+}
+
 
 export default function Home({ products, songs }) {
   const designproducts = products.filter((product) => product.category === "Design")
@@ -12,6 +35,8 @@ export default function Home({ products, songs }) {
   const businessproducts = products.filter((product) => product.category === "Business")
   const lifestyleproducts = products.filter((product) => product.category === "Lifestyle")
   const developproducts = products.filter((product) => product.category === "Development")
+  handleartists(songs)
+
 
 
 
@@ -43,6 +68,21 @@ export default function Home({ products, songs }) {
                   <Songsection key={song.id} {...song} />
                 )
               })}
+            </div>
+          </div>
+          <div className='my-20'>
+            <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8 ">
+              <div className='flex justify-between items-center'>
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900  ">Top artists</h2>
+                <Link href='/lifestyle' className='hover:underline hover:underline-offset-4'>View All</Link>
+              </div>
+              <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 mx-auto">
+                {artists.slice(0, 5).map((artist) => {
+                  return (
+                    <Artists key={artist.id} {...artist} />
+                  )
+                })}
+              </div>
             </div>
           </div>
           <div className='my-20'>
@@ -112,6 +152,7 @@ export default function Home({ products, songs }) {
               })}
             </div>
           </div>
+
 
 
         </div>
