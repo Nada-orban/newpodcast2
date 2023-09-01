@@ -17,7 +17,14 @@ function index() {
         <>
             <Nav2 />
             <div>
-                {song.songarray.length === 0 ? (<div className='empty cart'><p>There are no items in your bag.</p></div>) : (
+                {song.songarray.length === 0 ? (
+                    <div className='mx-auto text-center  mt-20 flex-col justify-center items-center'>
+                        <p className='text-4xl font-extrabold'>Start Listening</p>
+                        <input
+                            className='w-1/2 p-5 text-xl h-10 bg-gray-100 rounded-full mb-6 mt-10'
+                            type='search' placeholder='Search' />
+                    </div>
+                ) : (
                     <div className='mx-auto max-w-2xl px-10 py-10 sm:px-10 sm:py-10 lg:max-w-7xl lg:px-10 '>
                         <h1 className='text-2xl font-bold  text-gray-900'>Recently Played</h1>
                         <div className='grid grid-cols-4 my-5 gap-6'>
@@ -82,7 +89,7 @@ function index() {
                     </div>
                 )}
 
-                <Mycollection />
+                {/* <Mycollection /> */}
             </div>
         </>
     )

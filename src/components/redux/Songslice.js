@@ -9,8 +9,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     songstate: {},
 
-    songarray: typeof localStorage !== 'undefined' && localStorage.getItem('recentlysong') ?
-        JSON.parse(localStorage.getItem('recentlysong')) :
+    songarray:
+        // typeof localStorage !== 'undefined' && localStorage.getItem('recentlysong') ?
+        //     JSON.parse(localStorage.getItem('recentlysong')) :
         []
     ,
 
