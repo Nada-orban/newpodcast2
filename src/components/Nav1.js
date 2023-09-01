@@ -17,7 +17,7 @@ const navigation = [
     { name: 'Design & Dev', href: '/designDev' },
     { name: 'Business', href: '/business' },
     { name: 'Lifestyle', href: '/lifestyle' },
-    // { name: 'My Collection', href: '/mycollection' },
+    { name: 'My Collection', href: '/mycollection' },
 
 ]
 

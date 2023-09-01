@@ -3,24 +3,45 @@ import Image from 'next/image'
 import imagelogo from '../../public/264x264-000000-80-0-0.jpg'
 import { HandThumbDownIcon, HandThumbUpIcon, ArrowUturnLeftIcon, ForwardIcon, PlayIcon, SpeakerWaveIcon, SpeakerXMarkIcon } from '@heroicons/react/24/outline'
 import { songs } from '../../songs'
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { songhandle } from '../components/redux/Songslice'
 
 
-function bottomnav({ song }) {
+
+function bottomnav() {
+    const dispatch = useDispatch()
+    const song = useSelector(state => state.song)
+    console.log(song.songstate.url)
+    console.log(song.songarray)
+
     const [show, setShow] = useState(false)
-    // if (song.url !== "") {
-    //     setShow(!show)
+    useEffect(() => {
 
-    // }
+
+        if (song.songstate.url !== "") {
+            console.log(song.songstate.url)
+            console.log(show)
+            setShow(!show)
+        }
+
+    }, [song.songstate])
+
+
+
+
 
 
 
     return (
-        <div>
-            <audio controls className='fixed bottom-0' >
-                <source src={song} type="audio/ogg" />
+        <div className='bg-red-300 h-20 w-full  fixed bottom-0 ' >
+            {!show && (<audio id={song.songstate.id} controls className='w-full rounded-lg bg-gray-100  ' >
+                <source src={song.songstate.url} type="audio/mp3" />
                 Your browser does not support the audio element.
 
-            </audio>
+            </audio>)}
+
+            <p>{song.songstate.name}</p>
         </div>
 
         // <div as='nav' className='sticky bottom-0 bg-red-700 text-white px-5 py-3'>

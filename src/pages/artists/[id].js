@@ -5,6 +5,10 @@ import { songs } from '../../../songs'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import Bottomnav from '@/components/Bottomnav'
+import { useSelector, useDispatch } from 'react-redux';
+import { songhandle } from '../../components/redux/Songslice'
+import handler from '../api/products/[id]'
+
 
 
 
@@ -18,6 +22,17 @@ import Bottomnav from '@/components/Bottomnav'
 function artistid({ song }) {
     const songofartist = songs.filter((songlo) => songlo.author === song.author)
     const [play, setPlay] = useState(false)
+    const dispatch = useDispatch()
+    const [show, setShow] = useState(false)
+
+
+
+
+
+    const handlesong = (song) => {
+        console.log(song)
+        dispatch(songhandle(song))
+    }
 
 
 
@@ -57,9 +72,9 @@ function artistid({ song }) {
                                 {songofartist.map((songlo) => {
                                     return (
                                         <>
-                                            <div className='flex justify-between my-3'>
+                                            <div key={songlo.id} className='flex justify-between my-3'>
                                                 <div className='flex gap-5'>
-                                                    <div className='group relative overflow-hidden cursor-pointer' onClick={() => setPlay(!play)}>
+                                                    <div className='group relative overflow-hidden cursor-pointer' onClick={() => dispatch(songhandle(songlo))}>
                                                         <img
                                                             src={songlo.link.images[1].url}
                                                             alt='songimg'
@@ -129,7 +144,7 @@ function artistid({ song }) {
 
                                             </div>
                                             <hr />
-                                            {play && (<Bottomnav song={songlo.url} />)}
+                                            {/* {play && (<Bottomnav song={songlo.url} />)} */}
 
 
                                         </>

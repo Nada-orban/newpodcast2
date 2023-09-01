@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { PlayIcon, } from '@heroicons/react/24/outline'
+import { useSelector, useDispatch } from 'react-redux';
+
 
 function Songsection({ id, name, author, link }) {
 
@@ -31,7 +33,8 @@ function Songsection({ id, name, author, link }) {
                                 {name}
                             </a>
                         </h3>
-                        <p className="mt-1 text-sm text-gray-500">{author}</p>
+                        <a href={`/artists/${id}`}><p className="mt-1 text-sm text-gray-500">{author}</p></a>
+
                     </div>
 
                 </div>

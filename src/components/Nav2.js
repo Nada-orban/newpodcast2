@@ -13,7 +13,7 @@ const navigation = [
     { name: 'Design & Dev', href: '/designDev' },
     { name: 'Business', href: '/business' },
     { name: 'Lifestyle', href: '/lifestyle' },
-    // { name: 'Library', href: '/mycollection' },
+    { name: 'My collection', href: '/mycollection' },
 
 ]
 
@@ -32,7 +32,7 @@ function Nav2() {
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                         <div className="relative flex h-16 items-center justify-between">
-                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                            <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
                                 {/* Mobile menu button*/}
                                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="absolute -inset-0.5" />
@@ -45,14 +45,14 @@ function Nav2() {
                                 </Disclosure.Button>
                             </div>
                             <Link href='/'>
-                                <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 sm:left-12 sm:px-auto '>
+                                <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 md:left-12 md:px-auto '>
                                     <h1 className='text-white text-xl  font-black '
                                     >PODCAST</h1>
                                 </div>
                             </Link>
 
-                            <div className="hidden  sm:block absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2  inset-y-1">
-                                <div className="flex justify-center items-center gap-4 pt-1 ">
+                            <div className="hidden  md:block absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2  inset-y-1">
+                                <div className="flex  items-center gap-2 pt-1 ">
                                     {navigation.map((item) => {
                                         const isActive = router.asPath === item.href;
                                         return (
@@ -152,7 +152,7 @@ function Nav2() {
                         </div>
                     </div>
 
-                    <Disclosure.Panel className="sm:hidden">
+                    <Disclosure.Panel className="md:hidden">
                         <div className="space-y-1 px-2 pb-3 pt-2">
                             {navigation.map((item) => (
                                 <Disclosure.Button

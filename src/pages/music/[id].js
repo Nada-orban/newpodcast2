@@ -7,10 +7,11 @@ import Bottomnav from '@/components/Bottomnav'
 
 
 function songid({ song }) {
+    console.log(song.url)
     return (
         <>
             <Nav2 />
-            <div className='my-12'>
+            <div key={song.id} className='my-12'>
                 <div className='container mx-auto '>
                     <div className='mx-auto max-w-2xl px-7  sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8'>
                         <div className='grid   grid-cols-1 gap-7 sm:grid-cols-2'>
