@@ -10,8 +10,8 @@ const initialState = {
     songstate: {},
 
     songarray:
-        // typeof localStorage !== 'undefined' && localStorage.getItem('recentlysong') ?
-        //     JSON.parse(localStorage.getItem('recentlysong')) :
+        // typeof localStorage !== 'undefined' && localStorage.getItem('songarray') ?
+        //     JSON.parse(localStorage.getItem('songarray')) :
         []
     ,
 
@@ -35,7 +35,14 @@ const Songslice = createSlice({
             state.songstate = action.payload;
             state.songarray.push(action.payload)
 
-            setStorLocal("recentlysong", JSON.stringify(state.songarray));
+            setStorLocal("songarray", JSON.stringify(state.songarray));
+        },
+        removeitem: (state, action) => {
+            const notremoveitems = state.songarray.filter(item => (item.id !== action.payload.id));
+            state.songarray = notremoveitems;
+
+            setStorLocal("songarray", JSON.stringify(state.cartItems));
+
         }
 
     }
@@ -43,6 +50,6 @@ const Songslice = createSlice({
 
 
 
-export const { songhandle } = Songslice.actions
+export const { songhandle, removeitem } = Songslice.actions
 
 export default Songslice.reducer

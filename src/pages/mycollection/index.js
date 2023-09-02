@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import Image from 'next/image'
 import imagelogo from '../../../public/264x264-000000-80-0-0.jpg'
 import { PlayIcon, EllipsisHorizontalIcon, PlayCircleIcon, MusicalNoteIcon } from '@heroicons/react/24/solid'
@@ -7,12 +7,15 @@ import styles from '../../styles/Home.module.css'
 import Mycollection from '@/components/Mycollection'
 import Nav2 from '@/components/Nav2'
 import { useEffect } from 'react';
+import { removeitem } from '../../components/redux/Songslice'
 import { useSelector, useDispatch } from 'react-redux';
 
 
 
 function index() {
+    const dispatch = useDispatch()
     const song = useSelector(state => state.song)
+    const [input, setInput] = useState("")
     return (
         <>
             <Nav2 />
@@ -22,7 +25,7 @@ function index() {
                         <p className='text-4xl font-extrabold'>Start Listening</p>
                         <input
                             className='w-1/2 p-5 text-xl h-10 bg-gray-100 rounded-full mb-6 mt-10'
-                            type='search' placeholder='Search' />
+                            type='search' placeholder='Search' value={input} />
                     </div>
                 ) : (
                     <div className='mx-auto max-w-2xl px-10 py-10 sm:px-10 sm:py-10 lg:max-w-7xl lg:px-10 '>
@@ -62,10 +65,10 @@ function index() {
                                                         leaveTo="transform opacity-0 scale-95"
                                                     >
                                                         <Menu.Items className="absolute text-black left-16 top-7 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
-                                                            <Menu.Item>
+                                                            <Menu.Item onClick={() => dispatch(removeitem(song))} className="cursor-pointer">
                                                                 <p>remove from your collection</p>
                                                             </Menu.Item>
-                                                            <Menu.Item>
+                                                            <Menu.Item className="cursor-pointer">
                                                                 <p>share</p>
                                                             </Menu.Item>
 
