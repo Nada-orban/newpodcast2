@@ -31,9 +31,18 @@ const Songslice = createSlice({
     initialState,
     reducers: {
         songhandle: (state, action) => {
-
             state.songstate = action.payload;
-            state.songarray.push(action.payload)
+            const filterarray = state.songarray.findIndex(item => item.id === action.payload.id)
+            if (filterarray >= 0) {
+                console.log(filterarray)
+            } else {
+                state.songarray.push(action.payload)
+            }
+            // if (!state.songarray.includes(action.payload)) {
+            //     state.songarray.push(action.payload)
+
+            // }
+
 
             setStorLocal("songarray", JSON.stringify(state.songarray));
         },
