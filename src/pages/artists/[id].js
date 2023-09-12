@@ -74,7 +74,7 @@ function artistid({ song }) {
                                         <>
                                             <div key={songlo.id} className='flex justify-between my-3'>
                                                 <div className='flex gap-5'>
-                                                    <div className='group relative overflow-hidden cursor-pointer' onClick={() => dispatch(songhandle(songlo))}>
+                                                    <div className='group relative overflow-hidden cursor-pointer' onClick={() => dispatch(songhandle(songlo))} >
                                                         <img
                                                             src={songlo.link.images[1].url}
                                                             alt='songimg'

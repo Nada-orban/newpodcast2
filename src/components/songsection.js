@@ -5,7 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function Songsection({ id, name, author, link }) {
 
-
+    const dispatch = useDispatch()
+    const song = useSelector(state => state.song)
     return (
         <div>
             <div key={id} className="group relative">
@@ -16,9 +17,9 @@ function Songsection({ id, name, author, link }) {
                             alt=""
                             className=" h-72 w-72 object-cover object-center mx-auto border rounded-lg"
                         />
-                        <div className='hidden absolute   bottom-0 left-0  h-72 w-72 rounded bg-red-400 bg-fixed opacity-0  hover:opacity-100 text-white group-hover:block transition duration-300 ease-out delay-150  '>
+                        <div className='block absolute   bottom-0 left-0  h-72 w-72 rounded bg-red-400 bg-fixed opacity-0  hover:opacity-100 text-white group-hover:block transition duration-300 ease-out delay-150  '>
                             <div className='flex flex-col justify-center items-center mt-20 rounded-full bg-white'>
-                                <PlayIcon className='bg-black' />
+                                <PlayIcon className='bg-black h-5 w-5 cursor-pointer mr-3' />
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import Image from 'next/image'
 import imagelogo from '../../../public/264x264-000000-80-0-0.jpg'
-import { PlayIcon, EllipsisHorizontalIcon, PlayCircleIcon, MusicalNoteIcon } from '@heroicons/react/24/solid'
+import { PlayIcon, EllipsisHorizontalIcon, PlayCircleIcon, MusicalNoteIcon, MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import styles from '../../styles/Home.module.css'
 import Mycollection from '@/components/Mycollection'
@@ -9,6 +9,8 @@ import Nav2 from '@/components/Nav2'
 import { useEffect } from 'react';
 import { removeitem } from '../../components/redux/Songslice'
 import { useSelector, useDispatch } from 'react-redux';
+import { searchitem } from '../../components/redux/Songslice'
+
 
 
 
@@ -16,16 +18,33 @@ function index() {
     const dispatch = useDispatch()
     const song = useSelector(state => state.song)
     const [input, setInput] = useState("")
+    const handlesearch = (item) => {
+        console.log(item)
+
+        dispatch(searchitem(item))
+        // location.href = '/search'
+
+
+    }
+
+
+
+
     return (
         <>
             <Nav2 />
             <div>
                 {song.songarray.length === 0 ? (
-                    <div className='mx-auto text-center  mt-20 flex-col justify-center items-center'>
+                    <div className='mx-auto text-center  mt-20 flex-col justify-center items-center pb-60' >
                         <p className='text-4xl font-extrabold'>Start Listening</p>
-                        <input
-                            className='w-1/2 p-5 text-xl h-10 bg-gray-100 rounded-full mb-6 mt-10'
-                            type='search' placeholder='Search' value={input} />
+                        <a href='/search'>
+                            <input
+                                className='w-1/2 p-5 text-xl h-10 bg-gray-100 rounded-full mb-6 mt-10'
+                                type='search' placeholder='Search'
+                                onChange={(e) => handlesearch(e.target.value)}
+                            />
+                        </a>
+
                     </div>
                 ) : (
                     <div className='mx-auto max-w-2xl px-10 py-10 sm:px-10 sm:py-10 lg:max-w-7xl lg:px-10 '>

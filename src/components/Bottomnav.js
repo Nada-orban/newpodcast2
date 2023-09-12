@@ -12,20 +12,28 @@ import { songhandle } from '../components/redux/Songslice'
 function bottomnav() {
     const dispatch = useDispatch()
     const song = useSelector(state => state.song)
-    console.log(song.songstate.url)
-    console.log(song.songarray)
+    // console.log(song.songstate.url)
+    // console.log(song.songarray)
 
     const [show, setShow] = useState(false)
-    useEffect(() => {
+    const [currentdata, setCurrrentdata] = useState(null)
+
+    // useEffect(() => {
+    //     if (song.songstate.url !== "") {
+    //         console.log(song.songstate.url)
+    //         console.log(show)
+    //         setShow(!show)
+    //     }
 
 
-        if (song.songstate.url !== "") {
-            console.log(song.songstate.url)
-            console.log(show)
-            setShow(!show)
-        }
+    //     //     if (song.songstate.url !== "") {
+    //     //         console.log(song.songstate.url)
+    //     //         console.log(show)
+    //     //         setShow(true)
 
-    }, [song.songstate])
+    //     //     }
+
+    // }, [song.songstate.url])
 
 
 
@@ -35,11 +43,11 @@ function bottomnav() {
 
     return (
         <div className='bg-red-300 h-20 w-full  fixed bottom-0 ' >
-            {!show && (<audio id={song.songstate.id} controls className='w-full rounded-lg bg-gray-100  ' >
+            {!show && <audio id={song.songstate.id} controls className='w-full rounded-lg bg-gray-100  '>
                 <source src={song.songstate.url} type="audio/mp3" />
                 Your browser does not support the audio element.
 
-            </audio>)}
+            </audio>}
 
             <p>{song.songstate.name}</p>
         </div>

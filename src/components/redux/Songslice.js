@@ -14,6 +14,7 @@ const initialState = {
         //     JSON.parse(localStorage.getItem('songarray')) :
         []
     ,
+    searchitem: "",
 
 
 }
@@ -52,6 +53,12 @@ const Songslice = createSlice({
 
             setStorLocal("songarray", JSON.stringify(state.cartItems));
 
+        },
+        searchitem: (state, action) => {
+            state.searchitem = action.payload;
+
+
+
         }
 
     }
@@ -59,6 +66,6 @@ const Songslice = createSlice({
 
 
 
-export const { songhandle, removeitem } = Songslice.actions
+export const { songhandle, removeitem, searchitem } = Songslice.actions
 
 export default Songslice.reducer
