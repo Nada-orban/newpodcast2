@@ -14,8 +14,8 @@ export default function App({ Component, pageProps }) {
       <Component {...pageProps} />
 
 
-      <Footer />
-      <Bottomnav />
+      {/* <Footer /> */}
+      {/* <Bottomnav /> */}
 
     </Provider>
 
