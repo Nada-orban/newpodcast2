@@ -80,7 +80,8 @@ function songid({ song }) {
                             </div>
                             <div className=''>
                                 <h2>{song.name}</h2>
-                                <p>{song.author}</p>
+                                <a href={`/artists/${song.id}`} className='hover:underline hover:underline-offset-2'><p>{song.author}</p></a>
+
                             </div>
                         </div>
                         <div className='flex gap-5 absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>

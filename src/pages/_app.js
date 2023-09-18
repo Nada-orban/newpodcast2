@@ -5,18 +5,19 @@ import Bottomnav from '@/components/Bottomnav'
 import { Provider } from 'react-redux'
 import { store } from '../components/redux/store'
 // import { wrapper } from '../components/redux/Store'
+import Controls from '@/components/controls'
+import PlayerState from '@/components/context/PlayerState'
 
 export default function App({ Component, pageProps }) {
   return (
     <Provider store={store}>
+      {/* <PlayerState> */}
       {/* <Nav1 /> */}
-
       <Component {...pageProps} />
-
-
       {/* <Footer /> */}
-      {/* <Bottomnav /> */}
-
+      <Bottomnav />
+      {/* <Controls /> */}
+      {/* </PlayerState> */}
     </Provider>
 
 

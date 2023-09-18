@@ -1,4 +1,5 @@
-
+import { useEffect, useState } from 'react'
+import { song_list } from '../../../songs'
 import { createSlice } from '@reduxjs/toolkit'
 
 
@@ -15,9 +16,18 @@ const initialState = {
         []
     ,
     searchitem: "",
+    currentSong: 0,
+    current: "",
+    songslist: song_list,
+    repeat: false,
+    random: false,
+    playing: false,
+    audio: null,
+
 
 
 }
+
 
 
 
@@ -59,6 +69,62 @@ const Songslice = createSlice({
 
 
 
+        },
+        currentmusic: (state, action) => {
+            state.currentSong = action.payload.id;
+            state.current = action.payload
+        }
+        ,
+        prevSong: (state, action) => {
+            state.currentSong = action.payload;
+            if (state.random) {
+                return state.currentSong = ~~(Math.random() * state.songslist.length);
+
+            }
+
+            if (state.currentSong === 0) {
+
+                return state.currentSong = state.songslist.length - 1
+
+                // SetCurrent(state.songslist.length - 1)
+            } else {
+                return state.currentSong = state.currentSong - 1
+
+                // SetCurrent(state.currentSong - 1)
+            }
+
+        },
+        nextSong: (state, action) => {
+            state.currentSong = action.payload;
+            if (state.random) {
+                return state.currentSong = ~~(Math.random() * state.songslist.length);
+
+            }
+            if (state.currentSong === state.songslist.length - 1) {
+
+                state.currentSong = 0;
+            } else {
+                state.currentSong = state.currentSong + 1;
+                // SetCurrent(state.currentSong + 1)
+            }
+        },
+        handleEnd: (state, action) => {
+            // Check for random and repeat options
+            state.currentSong = action.payload.id;
+
+            if (state.random) {
+                return state.currentSong = ~~(Math.random() * state.songslist.length);
+            } else {
+                if (state.repeat) {
+                    state.currentSong = state.currentSong + 1;
+                    // nextSong()
+                } else if (state.currentSong === state.songslist.length - 1) {
+                    return
+                } else {
+                    state.currentSong = state.currentSong + 1;
+                    // nextSong()
+                }
+            }
         }
 
     }
@@ -66,6 +132,6 @@ const Songslice = createSlice({
 
 
 
-export const { songhandle, removeitem, searchitem } = Songslice.actions
+export const { songhandle, removeitem, currentmusic, searchitem, handleEnd, prevSong, nextSong } = Songslice.actions
 
 export default Songslice.reducer

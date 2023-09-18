@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Nav2 from '@/components/Nav2'
 import { PlayIcon, EllipsisHorizontalIcon, ShareIcon } from '@heroicons/react/24/outline'
 import { songs } from '../../../songs'
@@ -6,8 +6,13 @@ import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import Bottomnav from '@/components/Bottomnav'
 import { useSelector, useDispatch } from 'react-redux';
-import { songhandle } from '../../components/redux/Songslice'
+import { songhandle, currentmusic } from '../../components/redux/Songslice'
 import handler from '../api/products/[id]'
+// import playerContext from '../../components/context/playerContext'
+
+
+
+// const { SetCurrent, currentSong, songslist } = useContext(playerContext)
 
 
 
@@ -31,7 +36,7 @@ function artistid({ song }) {
 
     const handlesong = (song) => {
         console.log(song)
-        dispatch(songhandle(song))
+        dispatch(currentmusic(song))
     }
 
 
@@ -69,12 +74,21 @@ function artistid({ song }) {
                             </div>
                             <hr />
                             <div>
-                                {songofartist.map((songlo) => {
+                                {songofartist.map((songlo, i) => {
                                     return (
                                         <>
-                                            <div key={songlo.id} className='flex justify-between my-3'>
+                                            <div key={i} className='flex justify-between my-3'>
                                                 <div className='flex gap-5'>
-                                                    <div className='group relative overflow-hidden cursor-pointer' onClick={() => handlesong(songlo)} >
+                                                    <div
+                                                        className="group relative overflow-hidden cursor-pointer"
+                                                        key={i}
+                                                        onClick={() => handlesong(songlo)}
+                                                    // onClick={() => handlesong(songlo)}
+                                                    // className={'songContainer group relative overflow-hidden cursor-pointer ' + (currentSong === i ? 'selected' : '')}
+                                                    // onClick={() => {
+                                                    //     SetCurrent(i)
+                                                    // }}
+                                                    >
                                                         <img
                                                             src={songlo.link.images[1].url}
                                                             alt='songimg'
