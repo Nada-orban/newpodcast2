@@ -53,6 +53,7 @@ function controls() {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentSong])
+
     return (
         <>
             <div className='absolute  hidden sm:block  inset-x-0 bottom-0 text-white bg-neutral-900/50 h-20 w-full '>

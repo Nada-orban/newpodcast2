@@ -84,11 +84,11 @@ const Songslice = createSlice({
 
             if (state.currentSong === 0) {
 
-                return state.currentSong = state.songslist.length - 1
+                return state.currentSong = state.songslist.length - 1;
 
                 // SetCurrent(state.songslist.length - 1)
             } else {
-                return state.currentSong = state.currentSong - 1
+                return state.currentSong = state.currentSong - 1;
 
                 // SetCurrent(state.currentSong - 1)
             }
@@ -100,7 +100,7 @@ const Songslice = createSlice({
                 return state.currentSong = ~~(Math.random() * state.songslist.length);
 
             }
-            if (state.currentSong === state.songslist.length - 1) {
+            if (state.currentSong === (state.songslist.length - 1)) {
 
                 state.currentSong = 0;
             } else {
