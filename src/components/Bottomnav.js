@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 import { songhandle, removeitem, currentmusic, searchitem, handleEnd, prevSong, nextSong } from '../components/redux/Songslice'
 import { IoReload } from 'react-icons/io5'
 import { FaPlay } from 'react-icons/fa6'
-import { BsFillSkipEndFill, BsFillSkipStartFill, BsPauseFill, BsFillVolumeDownFill } from 'react-icons/bs'
+import { BsFillSkipEndFill, BsFillSkipStartFill, BsPauseFill, BsFillVolumeDownFill, BsFillVolumeOffFill, BsVolumeUpFill } from 'react-icons/bs'
 
 
 
@@ -19,13 +19,14 @@ function bottomnav() {
     const audio = useRef('audio_tag')
     const [playing, setPlaying] = useState(false)
 
-    const [show, setShow] = useState(false)
+    const [showvolum, setShowvolum] = useState(false)
     const [disappear, setDisappear] = useState(true)
     const [currentdata, setCurrrentdata] = useState(null)
 
     const [statevolum, setStateVolum] = useState(0.3)
     const [dur, setDur] = useState(0)
     const [currentTime, setCurrentTime] = useState(0)
+
     // useEffect(() => {
     //     if (song.songstate.url !== "") {
     //         console.log(song.songstate.url)
@@ -64,7 +65,9 @@ function bottomnav() {
         setCurrentTime(compute)
         audio.current.currentTime = compute
     }
-
+    const fmtMSS = (s) => {
+        return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + ~~s
+    }
     // useEffect(() => {
     //     audio.current.volume = statevolum
     //     if (playing) {
@@ -128,8 +131,34 @@ function bottomnav() {
                                 {/* <HandThumbUpIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" /> */}
 
                             </div>
-                            <div className='flex gap-3 absolute right-5'>
-                                <p>0:03<span>|</span>3:1</p>
+                            <div className='flex gap-3 absolute right-5 items-center'>
+                                <div>
+                                    {/* <input
+                                        onChange={handleProgress}
+                                        value={dur ? (currentTime * 100) / dur : 0}
+                                        type="range"
+                                        name="progresBar"
+                                        id="prgbar"
+                                    /> */}
+                                    <span className="currentT">{fmtMSS(currentTime)}</span>/
+                                    <span className="totalT">{fmtMSS(dur)}</span>
+                                </div>
+
+                                <div className="vlme flex items-center">
+                                    <span className="volum">
+                                        <BsFillVolumeDownFill className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} onClick={() => setShowvolum(!showvolum)} />
+                                    </span>
+                                    {showvolum && (<input
+                                        value={Math.round(statevolum * 100)}
+                                        type="range"
+                                        name="volBar"
+                                        id="volBar"
+                                        onChange={(e) => handleVolume(e.target.value / 100)}
+                                        className='accent-gray-200'
+
+                                    />)}
+
+                                </div>
                                 <IoReload style={{ width: "20px", height: "20px", color: "white" }}
                                 // className={'repeat ' + (repeat ? 'active' : '')}
                                 />
@@ -140,23 +169,40 @@ function bottomnav() {
                         </div>
 
                     </div>
-                    <div className='sm:hidden inset-x-0 absolute  bottom-0 h-1/3 dark:bg-neutral-900/50  bg-neutral-100/25  dark:text-white text-black px-5 py-3 border border-white w-full overflow-hidden rounded-t-[50px]'>
+                    <div className='sm:hidden inset-x-0 absolute  bottom-0 h-1/3 bg-neutral-900/50  dark:bg-neutral-100/25  text-white dark:text-black px-5 py-3 border border-white w-full overflow-hidden rounded-t-[50px]'>
                         <div className='flex flex-col gap-3 justify-center items-center'>
                             <div className='bg-black/75 h-[5px] w-32 my-2 rounded-2xl'></div>
-                            <div className='text-center'>
+                            <div className='text-center py-3'>
                                 <h4 className='text-lg font-black '>{song.current.name}</h4>
                                 <p className='text-sm font-medium'>{song.current.author}</p>
                             </div>
                             <div>
-                                <div></div>
-                                <input
+                                <div>
+                                    <input
+                                        onChange={handleProgress}
+                                        value={dur ? (currentTime * 100) / dur : 0}
+                                        type="range"
+                                        name="progresBar"
+                                        id="prgbar"
+                                        className='w-full accent-gray-200'
+                                    />
+                                    <div className='flex justify-between'>
+                                        <span className="currentT">{fmtMSS(currentTime)}</span>
+                                        <span className="totalT">{fmtMSS(dur)}</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                {/* <input
 
                                     id="myinput"
                                     type='range'
                                     className='accent-red-600 w-72 my-3'
-                                />
+                                /> */}
                                 <div className='flex justify-between items-center my-3'>
-                                    <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "black" }} onClick={() => dispatch(prevSong(song.currentSong))} />
+                                    <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
                                     <div
                                         className="play"
                                         onClick={() => {
@@ -172,10 +218,26 @@ function bottomnav() {
                                         </span>
                                     </div>
 
-                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "black" }} onClick={() => dispatch(nextSong(song.currentSong))} />
+                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(nextSong(song.currentSong))} />
                                 </div>
                                 <div>
 
+                                </div>
+                                <div className="vlme flex items-center gap-5">
+                                    <span className="volum my-4">
+                                        <BsFillVolumeOffFill />
+                                    </span>
+                                    <input
+                                        value={Math.round(statevolum * 100)}
+                                        type="range"
+                                        name="volBar"
+                                        id="volBar"
+                                        onChange={(e) => handleVolume(e.target.value / 100)}
+                                        className='w-full accent-gray-200'
+                                    />
+                                    <span>
+                                        <BsVolumeUpFill />
+                                    </span>
                                 </div>
 
                             </div>

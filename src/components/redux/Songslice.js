@@ -125,7 +125,12 @@ const Songslice = createSlice({
                     // nextSong()
                 }
             }
-        }
+        },
+        // repeat:(state,action)=>{
+        //     if(state.repeat== true){
+        //         state.currentSong=
+        //     }
+        // }
 
     }
 })
