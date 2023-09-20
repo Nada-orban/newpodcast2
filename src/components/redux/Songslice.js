@@ -126,11 +126,11 @@ const Songslice = createSlice({
                 }
             }
         },
-        // repeat:(state,action)=>{
-        //     if(state.repeat== true){
-        //         state.currentSong=
-        //     }
-        // }
+        repeat: (state, action) => {
+            if (state.repeat == true) {
+                state.currentSong = action.payload;
+            }
+        }
 
     }
 })

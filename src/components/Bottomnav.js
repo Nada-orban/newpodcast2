@@ -68,6 +68,9 @@ function bottomnav() {
     const fmtMSS = (s) => {
         return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + ~~s
     }
+    const handlerepeat = () => {
+        setCurrentTime(0)
+    }
     // useEffect(() => {
     //     audio.current.volume = statevolum
     //     if (playing) {
@@ -108,29 +111,41 @@ function bottomnav() {
                                 preload="true"
                                 src={song.songslist[song.currentSong].url}
                             />
-                            <div className='musicControls flex gap-5 absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>
-                                {/* <HandThumbDownIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" /> */}
-                                <BsFillSkipStartFill className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
-                                <div
-                                    className="play"
-                                    onClick={() => {
-                                        // togglePlaying()
-                                        toggleAudio()
-                                    }}
-                                >
-                                    <span className={!playing ? '' : 'hidden'}>
-                                        <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
-                                    </span>
-                                    <span className={!playing ? 'hidden' : ''}>
-                                        <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
-                                    </span>
+                            <div className=" ">
+                                <div className='musicControls flex justify-between gap-10 absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 '>
+                                    <BsFillSkipStartFill className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
+                                    <div
+                                        className="play"
+                                        onClick={() => {
+                                            // togglePlaying()
+                                            toggleAudio()
+                                        }}
+                                    >
+                                        <span className={!playing ? '' : 'hidden'}>
+                                            <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                        </span>
+                                        <span className={!playing ? 'hidden' : ''}>
+                                            <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                        </span>
+                                    </div>
+                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' onClick={() => dispatch(nextSong(song.currentSong))} />
                                 </div>
-                                {/* <FaPlay style={{ width: "30px", height: "30px", color: "white" }} /> */}
+                                {/* <div className='mt-3 flex  gap-5'>
+                                    <span className="currentT">{fmtMSS(currentTime)}</span>
+                                    <input
+                                        onChange={handleProgress}
+                                        value={dur ? (currentTime * 100) / dur : 0}
+                                        type="range"
+                                        name="progresBar"
+                                        id="prgbar"
 
-                                <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' onClick={() => dispatch(nextSong(song.currentSong))} />
-                                {/* <HandThumbUpIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" /> */}
+                                        className='w-60 accent-gray-200'
+                                    />
 
+                                    <span className="totalT">{fmtMSS(dur)}</span>
+                                </div> */}
                             </div>
+
                             <div className='flex gap-3 absolute right-5 items-center'>
                                 <div>
                                     {/* <input
@@ -160,7 +175,9 @@ function bottomnav() {
 
                                 </div>
                                 <IoReload style={{ width: "20px", height: "20px", color: "white" }}
-                                // className={'repeat ' + (repeat ? 'active' : '')}
+                                    // className={'repeat ' + (repeat ? 'active' : '')}
+                                    className='cursor-pointer'
+                                    onClick={handlerepeat}
                                 />
                                 {/* <SpeakerWaveIcon className=" h-10 w-15 cursor-pointer" aria-hidden="true" /> */}
 
@@ -169,14 +186,14 @@ function bottomnav() {
                         </div>
 
                     </div>
-                    <div className='sm:hidden inset-x-0 absolute  bottom-0 h-1/3 bg-neutral-900/50  dark:bg-neutral-100/25  text-white dark:text-black px-5 py-3 border border-white w-full overflow-hidden rounded-t-[50px]'>
+                    <div className='sm:hidden inset-x-0 sticky bottom-0 h-2/5 bg-neutral-900/50  dark:bg-neutral-100/25  text-white dark:text-black px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px]'>
                         <div className='flex flex-col gap-3 justify-center items-center'>
-                            <div className='bg-black/75 h-[5px] w-32 my-2 rounded-2xl'></div>
-                            <div className='text-center py-3'>
+                            <div className='bg-white/75 h-[5px] w-32 my-2 rounded-2xl'></div>
+                            <div className='text-center py-2'>
                                 <h4 className='text-lg font-black '>{song.current.name}</h4>
                                 <p className='text-sm font-medium'>{song.current.author}</p>
                             </div>
-                            <div>
+                            <div className='mt-4'>
                                 <div>
                                     <input
                                         onChange={handleProgress}
@@ -184,7 +201,7 @@ function bottomnav() {
                                         type="range"
                                         name="progresBar"
                                         id="prgbar"
-                                        className='w-full accent-gray-200'
+                                        className='w-72 accent-gray-200'
                                     />
                                     <div className='flex justify-between'>
                                         <span className="currentT">{fmtMSS(currentTime)}</span>
@@ -201,7 +218,7 @@ function bottomnav() {
                                     type='range'
                                     className='accent-red-600 w-72 my-3'
                                 /> */}
-                                <div className='flex justify-between items-center my-3'>
+                                <div className='flex justify-between items-center my-5'>
                                     <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
                                     <div
                                         className="play"
