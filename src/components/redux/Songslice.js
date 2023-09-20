@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { song_list } from '../../../songs'
+import { songs } from '../../../songs'
 import { createSlice } from '@reduxjs/toolkit'
 
 
@@ -18,7 +18,7 @@ const initialState = {
     searchitem: "",
     currentSong: 0,
     current: "",
-    songslist: song_list,
+    songslist: songs,
     repeat: false,
     random: false,
     playing: false,
@@ -84,11 +84,11 @@ const Songslice = createSlice({
 
             if (state.currentSong === 0) {
 
-                return state.currentSong = state.songslist.length - 1;
+                state.currentSong = (state.songslist.length - 1);
 
                 // SetCurrent(state.songslist.length - 1)
             } else {
-                return state.currentSong = state.currentSong - 1;
+                state.currentSong = (state.currentSong - 1);
 
                 // SetCurrent(state.currentSong - 1)
             }

@@ -15,8 +15,7 @@ import { BsFillSkipEndFill, BsFillSkipStartFill, BsPauseFill, BsFillVolumeDownFi
 function bottomnav() {
     const dispatch = useDispatch()
     const song = useSelector(state => state.song)
-    console.log(song.songstate.url)
-    console.log(song.songarray)
+
     const audio = useRef('audio_tag')
     const [playing, setPlaying] = useState(false)
 
@@ -52,7 +51,7 @@ function bottomnav() {
         setPlaying(!playing);
         audio.current.paused ? audio.current.play() : audio.current.pause();
     }
-    console.log(song.songslist)
+
 
 
     const handleVolume = (q) => {
@@ -86,14 +85,14 @@ function bottomnav() {
                             <div className='flex gap-2'>
                                 <div>
                                     <img
-                                        src={song.current.link.images[1].url}
+                                        src={song.songslist[song.currentSong].link.images[1].url}
                                         className='w-[50px] h-[50px]'
 
                                     />
                                 </div>
                                 <div className=''>
-                                    <h2>{song.current.name}</h2>
-                                    <a href={`/artists/${song.current.id}`} className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></a>
+                                    <h2>{song.songslist[song.currentSong].name}</h2>
+                                    <a href={`/artists/${song.songslist[song.currentSong].id}`} className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></a>
 
                                 </div>
                             </div>
@@ -104,11 +103,11 @@ function bottomnav() {
                                 ref={audio}
 
                                 preload="true"
-                                src={song.current.url}
+                                src={song.songslist[song.currentSong].url}
                             />
                             <div className='musicControls flex gap-5 absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2'>
                                 {/* <HandThumbDownIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" /> */}
-                                <BsFillSkipStartFill onClick={() => dispatch(prevSong(song.currentSong))} className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} />
+                                <BsFillSkipStartFill className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
                                 <div
                                     className="play"
                                     onClick={() => {
@@ -157,7 +156,7 @@ function bottomnav() {
                                     className='accent-red-600 w-72 my-3'
                                 />
                                 <div className='flex justify-between items-center my-3'>
-                                    <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "black" }} />
+                                    <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "black" }} onClick={() => dispatch(prevSong(song.currentSong))} />
                                     <div
                                         className="play"
                                         onClick={() => {
@@ -173,7 +172,7 @@ function bottomnav() {
                                         </span>
                                     </div>
 
-                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "black" }} />
+                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "black" }} onClick={() => dispatch(nextSong(song.currentSong))} />
                                 </div>
                                 <div>
 

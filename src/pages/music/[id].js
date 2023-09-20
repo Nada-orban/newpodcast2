@@ -30,7 +30,7 @@ function songid({ song }) {
     return (
         <>
             <Nav2 />
-            <div key={song.id} className=' '>
+            <div key={song.id} className=' pb-10'>
                 <div className='absolute -z-10 ' >
                     <img
                         src={song.link.images[1].url}
@@ -42,7 +42,7 @@ function songid({ song }) {
                 <div className='container mx-auto  pt-16
                 
                 '>
-                    <div className='mx-auto max-w-2xl px-7  sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8'>
+                    <div className='mx-auto max-w-2xl px-7  sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8'>
                         <div className='flex flex-col gap-7'>
                             <div >
 
