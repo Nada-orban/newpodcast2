@@ -11,6 +11,10 @@ import { FaPlay } from 'react-icons/fa6'
 import { BsFillSkipEndFill, BsFillSkipStartFill, BsPauseFill, BsFillVolumeDownFill, BsFillVolumeOffFill, BsVolumeUpFill } from 'react-icons/bs'
 
 
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
 
 function bottomnav() {
     const dispatch = useDispatch()
@@ -22,6 +26,7 @@ function bottomnav() {
     const [showvolum, setShowvolum] = useState(false)
     const [disappear, setDisappear] = useState(true)
     const [currentdata, setCurrrentdata] = useState(null)
+    const [mobile, setMobile] = useState(false)
 
     const [statevolum, setStateVolum] = useState(0.3)
     const [dur, setDur] = useState(0)
@@ -71,12 +76,12 @@ function bottomnav() {
     const handlerepeat = () => {
         setCurrentTime(0)
     }
-    // useEffect(() => {
-    //     audio.current.volume = statevolum
-    //     if (playing) {
-    //         toggleAudio()
-    //     }
-    // }, [song.current]);
+    useEffect(() => {
+
+        if (playing) {
+            toggleAudio()
+        }
+    }, [song.current]);
 
 
 
@@ -186,74 +191,125 @@ function bottomnav() {
                         </div>
 
                     </div>
-                    <div className='sm:hidden inset-x-0 sticky bottom-0 h-2/5 bg-neutral-900/50  dark:bg-neutral-100/25  text-white dark:text-black px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px]'>
-                        <div className='flex flex-col gap-3 justify-center items-center'>
-                            <div className='bg-white/75 h-[5px] w-32 my-2 rounded-2xl'></div>
-                            <div className='text-center py-2'>
-                                <h4 className='text-lg font-black '>{song.current.name}</h4>
-                                <p className='text-sm font-medium'>{song.current.author}</p>
-                            </div>
-                            <div className='mt-4'>
-                                <div>
-                                    <input
-                                        onChange={handleProgress}
-                                        value={dur ? (currentTime * 100) / dur : 0}
-                                        type="range"
-                                        name="progresBar"
-                                        id="prgbar"
-                                        className='w-72 accent-gray-200'
-                                    />
-                                    <div className='flex justify-between'>
-                                        <span className="currentT">{fmtMSS(currentTime)}</span>
-                                        <span className="totalT">{fmtMSS(dur)}</span>
+
+
+
+
+                    {/* mobile */}
+
+                    <div id="hs-overlay-bottom" className="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-full h-full w-full z-[60]  border-b dark:bg-gray-800 dark:border-gray-700 hidden" tabindex="-1" >
+                        <div
+                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full bg-neutral-900/50  dark:bg-neutral-100/25  text-white dark:text-black px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px] 
+                        '
+                        >
+                            <div className='flex flex-col gap-3 justify-center items-center'>
+                                <div className='bg-white/75 h-[5px] w-32 my-2 rounded-2xl' data-hs-overlay="#hs-overlay-bottom"></div>
+                                <div className='text-center py-2'>
+                                    <h4 className='text-lg font-black '>{song.current.name}</h4>
+                                    <p className='text-sm font-medium'>{song.current.author}</p>
+                                </div>
+                                <div className='mt-4'>
+                                    <div>
+                                        <input
+                                            onChange={handleProgress}
+                                            value={dur ? (currentTime * 100) / dur : 0}
+                                            type="range"
+                                            name="progresBar"
+                                            id="prgbar"
+                                            className='w-72 accent-gray-200'
+                                        />
+                                        <div className='flex justify-between'>
+                                            <span className="currentT">{fmtMSS(currentTime)}</span>
+                                            <span className="totalT">{fmtMSS(dur)}</span>
+
+                                        </div>
 
                                     </div>
 
-                                </div>
 
-
-                                {/* <input
+                                    {/* <input
 
                                     id="myinput"
                                     type='range'
                                     className='accent-red-600 w-72 my-3'
                                 /> */}
-                                <div className='flex justify-between items-center my-5'>
-                                    <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
-                                    <div
-                                        className="play"
-                                        onClick={() => {
-                                            // togglePlaying()
-                                            toggleAudio()
-                                        }}
-                                    >
-                                        <span className={!playing ? '' : 'hidden'}>
-                                            <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                    <div className='flex justify-between items-center my-5'>
+                                        <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
+                                        <div
+                                            className="play"
+                                            onClick={() => {
+                                                // togglePlaying()
+                                                toggleAudio()
+                                            }}
+                                        >
+                                            <span className={!playing ? '' : 'hidden'}>
+                                                <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                            </span>
+                                            <span className={!playing ? 'hidden' : ''}>
+                                                <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                            </span>
+                                        </div>
+
+                                        <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(nextSong(song.currentSong))} />
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                    <div className="vlme flex items-center gap-5">
+                                        <span className="volum my-4">
+                                            <BsFillVolumeOffFill />
                                         </span>
-                                        <span className={!playing ? 'hidden' : ''}>
-                                            <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                        <input
+                                            value={Math.round(statevolum * 100)}
+                                            type="range"
+                                            name="volBar"
+                                            id="volBar"
+                                            onChange={(e) => handleVolume(e.target.value / 100)}
+                                            className='w-full accent-gray-200'
+                                        />
+                                        <span>
+                                            <BsVolumeUpFill />
                                         </span>
                                     </div>
 
-                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(nextSong(song.currentSong))} />
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-900/50 text-white  px-4 py-5 border border-white w-full overflow-hidden 
+                    rounded-t-[50px]' data-hs-overlay="#hs-overlay-bottom" >
+                        <div className='flex justify-between items-center'>
+                            <div className='flex gap-2'>
                                 <div>
+                                    <img
+                                        src={song.songslist[song.currentSong].link.images[1].url}
+                                        className='w-[30px] h-[30px]'
+
+                                    />
+                                </div>
+                                <div className=''>
+                                    <h2>{song.songslist[song.currentSong].name}</h2>
+                                    <div
+
+                                        className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></div>
 
                                 </div>
-                                <div className="vlme flex items-center gap-5">
-                                    <span className="volum my-4">
-                                        <BsFillVolumeOffFill />
+                            </div>
+                            <div>
+                                <div
+                                    className="play"
+                                    onClick={() => {
+                                        // togglePlaying()
+                                        toggleAudio()
+                                    }}
+                                >
+                                    <span className={!playing ? '' : 'hidden'}>
+                                        <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
                                     </span>
-                                    <input
-                                        value={Math.round(statevolum * 100)}
-                                        type="range"
-                                        name="volBar"
-                                        id="volBar"
-                                        onChange={(e) => handleVolume(e.target.value / 100)}
-                                        className='w-full accent-gray-200'
-                                    />
-                                    <span>
-                                        <BsVolumeUpFill />
+                                    <span className={!playing ? 'hidden' : ''}>
+                                        <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
                                     </span>
                                 </div>
 
@@ -268,62 +324,6 @@ function bottomnav() {
 
 
 
-        //********************************************************************************************************************************************** */
-        // <div className='bg-red-300 h-20 w-full  fixed bottom-0 ' >
-        //     {!show && <audio id={song.songstate.id} controls className='w-full rounded-lg bg-gray-100  '>
-        //         <source src={song.songstate.url} type="audio/mp3" onChange={() => show ? false : true} />
-        //         Your browser does not support the audio element.
-
-        //     </audio>}
-
-        //     <p>{song.songstate.name}</p>
-        // </div>
-
-        // <div className='sticky bottom-0 h-60 dark:bg-neutral-900/50 sm:bg-neutral-900/50 bg-neutral-200/50 text-white px-5 py-3 border border-white w-full overflow-hidden rounded-t-[50px]'>
-
-
-        //     <div className='flex flex-col gap-3 justify-center items-center'>
-        //         <div className='bg-black/75 h-[5px] w-32 my-2 rounded-2xl'></div>
-        //         <div>
-        //             <h4 className='text-lg font-bold'>{song.songstate.name}</h4>
-        //             <p className='text-sm font-medium'>{song.songstate.author}</p>
-        //         </div>
-        //         <div>
-        //             <div></div>
-        //             <audio />
-        //         </div>
-        //     </div>
-        /* <div className='flex justify-between items-center gap-1'>
-            <div className='flex gap-2'>
-                <div>
-                    <Image
-                        src={imagelogo}
-                        width={50}
-                        height={50}
-                    />
-                </div>
-                <div className=''>
-                    <h2>title</h2>
-                    <p>author</p>
-                </div>
-            </div>
-            <div className='flex justify-center items-center gap-5'>
-                <HandThumbDownIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
-                <ArrowUturnLeftIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
-                <PlayIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
-                <ForwardIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
-                <HandThumbUpIcon className=" h-10 w-10 cursor-pointer" aria-hidden="true" />
- 
-            </div>
-            <div className='flex justify-end items-center gap-3'>
-                <p>0:03<span>|</span>3:1</p>
-                <SpeakerWaveIcon className=" h-10 w-15 cursor-pointer" aria-hidden="true" />
- 
- 
-            </div>
-        </div> */
-
-        /* </div > */
     )
 }
 

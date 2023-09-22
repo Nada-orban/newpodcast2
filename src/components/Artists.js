@@ -2,7 +2,7 @@ import React from 'react'
 
 function artist({ id, name, author, link }) {
     return (
-        <div>
+        <div >
             <div key={id} className='flex flex-col justify-center items-center group relative '>
                 <a href={`artists/${id}`}>
                     <div className="relative aspect-h-1 aspect-w-1 w-40 overflow-hidden rounded-full bg-gray-200 lg:aspect-none  ">
