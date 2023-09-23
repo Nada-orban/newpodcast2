@@ -10,6 +10,10 @@ import Image from 'next/image'
 import { FaPlay } from 'react-icons/fa6'
 import { IoReload } from 'react-icons/io5'
 import { BsFillSkipEndFill, BsFillSkipStartFill } from 'react-icons/bs'
+import { AiOutlineArrowLeft } from 'react-icons/ai'
+import { MdDarkMode } from 'react-icons/md'
+import { BsFillSunFill } from 'react-icons/bs'
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 
 
@@ -29,7 +33,49 @@ function songid({ song }) {
 
     return (
         <>
-            <Nav2 />
+            <div className='hidden sm:block'><Nav2 /></div>
+
+            <div className='sm:hidden inset-x-0 fixed top-0 h-[100px] bg-neutral-900/50 text-white  px-8 py-7 border border-white w-full overflow-hidden 
+                    rounded-b-[50px] transition-all duration-300 ' >
+                <div className='flex justify-between items-center '>
+                    <a href='/music'>
+                        <div className='rounded-full w-10 h-10 p-3 bg-neutral-600  '>
+                            <AiOutlineArrowLeft />
+                        </div>
+                    </a>
+
+                    <div>
+                        <h3 className='text-center font-extrabold' >Now Playing</h3>
+                        {/* <p className='text-center'>Album</p>
+                        <IoIosArrowDown className='mx-auto' /> */}
+                    </div>
+                    <div className='rounded-full w-10 h-10 p-3 bg-neutral-600 '> <MdDarkMode /> </div>
+                </div>
+                {/* <div className=''>
+                    <div className='flex gap-2 my-2'>
+                        <div>
+                            <img
+                                src={song.link.images[1].url}
+                                className='w-[40px] h-[40px]'
+
+                            />
+                        </div>
+                        <div className=''>
+                            <h2>{song.name}</h2>
+                            <div
+
+                                className='hover:underline hover:underline-offset-2'><p>{song.author}</p></div>
+
+                        </div>
+                    </div>
+                    <hr />
+
+                </div> */}
+
+                {/* <IoIosArrowUp className='mx-auto mt-20 ' /> */}
+
+            </div>
+
             <div key={song.id} className=' pb-10'>
                 <div className='absolute -z-10 ' >
                     <img
@@ -49,7 +95,7 @@ function songid({ song }) {
                                 <img
                                     src={song.link.images[1].url}
                                     alt=''
-                                    className='h-72 w-72 object-cover object-center mx-auto  border rounded-lg '
+                                    className='h-72 w-72 object-cover object-center mx-auto rounded-lg mt-16 sm:mt-0 '
                                 />
 
 

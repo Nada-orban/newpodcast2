@@ -26,7 +26,7 @@ function bottomnav() {
     const [showvolum, setShowvolum] = useState(false)
     const [disappear, setDisappear] = useState(true)
     const [currentdata, setCurrrentdata] = useState(null)
-    const [mobile, setMobile] = useState(false)
+    const [mobile, setMobile] = useState(true)
 
     const [statevolum, setStateVolum] = useState(0.3)
     const [dur, setDur] = useState(0)
@@ -199,11 +199,18 @@ function bottomnav() {
 
                     <div id="hs-overlay-bottom" className="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-full h-full w-full z-[60]  border-b dark:bg-gray-800 dark:border-gray-700 hidden" tabindex="-1" >
                         <div
-                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full bg-neutral-900/50  dark:bg-neutral-100/25  text-white dark:text-black px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px] 
+                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full bg-neutral-900  dark:bg-neutral-100/25  text-white dark:text-black px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px] 
                         '
                         >
                             <div className='flex flex-col gap-3 justify-center items-center'>
-                                <div className='bg-white/75 h-[5px] w-32 my-2 rounded-2xl' data-hs-overlay="#hs-overlay-bottom"></div>
+                                <div className='bg-white/75 h-[5px] w-32 my-2 rounded-2xl' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}></div>
+                                <div className='mt-3'>
+                                    <img
+                                        src={song.songslist[song.currentSong].link.images[1].url}
+                                        className='w-[250px] h-[250px] rounded-md'
+
+                                    />
+                                </div>
                                 <div className='text-center py-2'>
                                     <h4 className='text-lg font-black '>{song.current.name}</h4>
                                     <p className='text-sm font-medium'>{song.current.author}</p>
@@ -277,45 +284,47 @@ function bottomnav() {
                         </div>
                     </div>
 
+                    {mobile && (
+                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-900/50 text-white  px-8 py-7 border border-white w-full overflow-hidden 
+                    rounded-t-[50px] transition-all duration-300 ' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)} >
+                            <div className='flex justify-between items-center'>
+                                <div className='flex gap-2'>
+                                    <div>
+                                        <img
+                                            src={song.songslist[song.currentSong].link.images[1].url}
+                                            className='w-[50px] h-[50px]'
 
-                    <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-900/50 text-white  px-4 py-5 border border-white w-full overflow-hidden 
-                    rounded-t-[50px]' data-hs-overlay="#hs-overlay-bottom" >
-                        <div className='flex justify-between items-center'>
-                            <div className='flex gap-2'>
+                                        />
+                                    </div>
+                                    <div className=''>
+                                        <h2>{song.songslist[song.currentSong].name}</h2>
+                                        <div
+
+                                            className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></div>
+
+                                    </div>
+                                </div>
                                 <div>
-                                    <img
-                                        src={song.songslist[song.currentSong].link.images[1].url}
-                                        className='w-[30px] h-[30px]'
-
-                                    />
-                                </div>
-                                <div className=''>
-                                    <h2>{song.songslist[song.currentSong].name}</h2>
                                     <div
-
-                                        className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></div>
+                                        className="play"
+                                        onClick={() => {
+                                            // togglePlaying()
+                                            toggleAudio()
+                                        }}
+                                    >
+                                        <span className={!playing ? '' : 'hidden'}>
+                                            <FaPlay style={{ width: "40px", height: "40px", color: "white" }} className='cursor-pointer bg-neutral-600 rounded-full p-3' />
+                                        </span>
+                                        <span className={!playing ? 'hidden' : ''}>
+                                            <BsPauseFill style={{ width: "40px", height: "40px", color: "white" }} className='cursor-pointer  bg-neutral-600 rounded-full p-3' />
+                                        </span>
+                                    </div>
 
                                 </div>
                             </div>
-                            <div>
-                                <div
-                                    className="play"
-                                    onClick={() => {
-                                        // togglePlaying()
-                                        toggleAudio()
-                                    }}
-                                >
-                                    <span className={!playing ? '' : 'hidden'}>
-                                        <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
-                                    </span>
-                                    <span className={!playing ? 'hidden' : ''}>
-                                        <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
-                                    </span>
-                                </div>
+                        </div>)
+                    }
 
-                            </div>
-                        </div>
-                    </div>
                 </>
             )}
 
