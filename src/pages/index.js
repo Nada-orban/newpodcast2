@@ -81,7 +81,14 @@ export default function Home({ products, songs }) {
 
               </Link>
             </div>
-            <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 mx-auto">
+            <div className="hidden sm:grid   mt-6  grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 mx-auto">
+              {artists.slice(0, 5).map((artist) => {
+                return (
+                  <Artists key={artist.id} {...artist} />
+                )
+              })}
+            </div>
+            <div className="sm:hidden mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-5 xl:gap-x-8 mx-auto">
               {artists.slice(0, 6).map((artist) => {
                 return (
                   <Artists key={artist.id} {...artist} />

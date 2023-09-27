@@ -207,7 +207,7 @@ function bottomnav() {
                                 <div className='mt-3'>
                                     <img
                                         src={song.songslist[song.currentSong].link.images[1].url}
-                                        className='w-[250px] h-[250px] rounded-md'
+                                        className='w-[300px] h-[300px] rounded-md'
 
                                     />
                                 </div>
