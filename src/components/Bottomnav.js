@@ -91,7 +91,7 @@ function bottomnav() {
         <>
             {song.current && (
                 <>
-                    <div className='sticky hidden sm:block  inset-x-0 bottom-0 text-white bg-neutral-900/50 h-20 w-full '>
+                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-white bg-neutral-900/50 h-20 w-full '>
                         <div className='flex justify-between items-center gap-1 p-3 relative'>
                             <div className='flex gap-2'>
                                 <div>
@@ -286,13 +286,13 @@ function bottomnav() {
 
                     {mobile && (
                         <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-900/50 text-white  px-8 py-7 border border-white w-full overflow-hidden 
-                    rounded-t-[50px] transition-all duration-300 ' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)} >
+                    rounded-t-[50px] transition-all duration-300 '  >
                             <div className='flex justify-between items-center'>
-                                <div className='flex gap-2'>
+                                <div className='flex gap-4' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}>
                                     <div>
                                         <img
                                             src={song.songslist[song.currentSong].link.images[1].url}
-                                            className='w-[50px] h-[50px]'
+                                            className='w-[50px] h-[50px] '
 
                                         />
                                     </div>

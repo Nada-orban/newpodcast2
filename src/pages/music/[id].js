@@ -95,7 +95,7 @@ function songid({ song }) {
                                 <img
                                     src={song.link.images[1].url}
                                     alt=''
-                                    className='h-72 w-72 object-cover object-center mx-auto rounded-lg mt-16 sm:mt-0 '
+                                    className='h-72 w-72 object-cover object-center mx-auto rounded-lg mt-16 sm:mt-0 sm:w-[450px] sm:h-[450px]'
                                 />
 
 
