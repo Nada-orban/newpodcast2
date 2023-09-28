@@ -199,7 +199,7 @@ function bottomnav() {
 
                     <div id="hs-overlay-bottom" className="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-full h-full w-full z-[60]  border-b dark:bg-gray-800 dark:border-gray-700 hidden" tabindex="-1" >
                         <div
-                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full bg-neutral-900  dark:bg-neutral-100/25  text-white dark:text-black px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px] 
+                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full bg-neutral-900    text-white  px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px] 
                         '
                         >
                             <div className='flex flex-col gap-3 justify-center items-center'>
@@ -212,8 +212,8 @@ function bottomnav() {
                                     />
                                 </div>
                                 <div className='text-center py-2'>
-                                    <h4 className='text-lg font-black '>{song.current.name}</h4>
-                                    <p className='text-sm font-medium'>{song.current.author}</p>
+                                    <h4 className='text-lg font-black text-white'>{song.current.name}</h4>
+                                    <p className='text-sm font-medium text-white'>{song.current.author}</p>
                                 </div>
                                 <div className='mt-4'>
                                     <div>
@@ -226,8 +226,8 @@ function bottomnav() {
                                             className='w-72 accent-gray-200'
                                         />
                                         <div className='flex justify-between'>
-                                            <span className="currentT">{fmtMSS(currentTime)}</span>
-                                            <span className="totalT">{fmtMSS(dur)}</span>
+                                            <span className="currentT text-white">{fmtMSS(currentTime)}</span>
+                                            <span className="totalT text-white">{fmtMSS(dur)}</span>
 
                                         </div>
 
