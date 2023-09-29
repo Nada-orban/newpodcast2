@@ -14,10 +14,13 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { MdDarkMode } from 'react-icons/md'
 import { BsFillSunFill } from 'react-icons/bs'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { useTheme } from "next-themes";
 
 
 
 function songid({ song }) {
+    const { systemTheme, theme, setTheme } = useTheme();
+    const currentTheme = theme === 'system' ? systemTheme : theme;
     console.log(song.url)
     const dispatch = useDispatch()
     useEffect(() => {
@@ -35,21 +38,21 @@ function songid({ song }) {
         <>
             <div className='hidden sm:block'><Nav2 /></div>
 
-            <div className='sm:hidden inset-x-0 fixed top-0 h-[100px] bg-neutral-900/50 text-white  px-8 py-7 border border-white w-full overflow-hidden 
+            <div className='sm:hidden inset-x-0 fixed top-0 h-[100px] bg-neutral-100/25 text-black dark:bg-neutral-900/50  dark:text-white  px-8 py-7 border border-white w-full overflow-hidden 
                     rounded-b-[50px] transition-all duration-300 ' >
                 <div className='flex justify-between items-center '>
                     <a href='/music'>
-                        <div className='rounded-full w-10 h-10 p-3 bg-neutral-600  '>
+                        <div className='rounded-full w-10 h-10 p-3  bg-neutral-200 text-neutral-700 dark:text-white dark:bg-neutral-600  '>
                             <AiOutlineArrowLeft />
                         </div>
                     </a>
 
                     <div>
-                        <h3 className='text-center font-extrabold' >Now Playing</h3>
+                        <h3 className='text-center font-extrabold text-shadow' >Now Playing</h3>
                         {/* <p className='text-center'>Album</p>
                         <IoIosArrowDown className='mx-auto' /> */}
                     </div>
-                    <div className='rounded-full w-10 h-10 p-3 bg-neutral-600 '> <MdDarkMode /> </div>
+                    <div className='rounded-full w-10 h-10 p-3 bg-neutral-200 text-neutral-700 dark:text-white dark:bg-neutral-600 ' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}> {theme === "light" ? <MdDarkMode /> : <BsFillSunFill />} </div>
                 </div>
                 {/* <div className=''>
                     <div className='flex gap-2 my-2'>
@@ -95,7 +98,7 @@ function songid({ song }) {
                                 <img
                                     src={song.link.images[1].url}
                                     alt=''
-                                    className='h-96 w-96 object-cover object-center mx-auto rounded-lg mt-16 sm:mt-0 sm:w-[450px] sm:h-[450px]'
+                                    className='h-96 w-96 object-cover object-center mx-auto rounded-lg mt-16 sm:mt-0 sm:w-[350px] sm:h-[350px]'
                                 />
 
 

@@ -9,6 +9,7 @@ import { store } from '../components/redux/store'
 import Controls from '@/components/controls'
 import PlayerState from '@/components/context/PlayerState'
 'use client;'
+import { ThemeProvider } from "next-themes"
 
 
 export default function App({ Component, pageProps }) {
@@ -16,15 +17,17 @@ export default function App({ Component, pageProps }) {
     import('preline')
   }, [])
   return (
-    <Provider store={store}>
-      {/* <PlayerState> */}
-      {/* <Nav1 /> */}
-      <Component {...pageProps} />
-      {/* <Footer /> */}
-      <Bottomnav />
-      {/* <Controls /> */}
-      {/* </PlayerState> */}
-    </Provider>
+    <ThemeProvider attribute="class">
+      <Provider store={store} >
+        {/* <PlayerState> */}
+        {/* <Nav1 /> */}
+        <Component {...pageProps} />
+        {/* <Footer /> */}
+        <Bottomnav />
+        {/* <Controls /> */}
+        {/* </PlayerState> */}
+      </Provider>
+    </ThemeProvider>
 
 
 

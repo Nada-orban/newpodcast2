@@ -195,15 +195,15 @@ function bottomnav() {
 
 
 
-                    {/* mobile */}
+                    {/* mobile  overlay*/}
 
-                    <div id="hs-overlay-bottom" className="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-full h-full w-full z-[60]  border-b dark:bg-gray-800 dark:border-gray-700 hidden" tabindex="-1" >
+                    <div id="hs-overlay-bottom" className="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-full h-full w-full z-[60]  border-b  hidden" tabindex="-1" >
                         <div
-                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full bg-neutral-900    text-white  px-2 py-3 border border-white w-full overflow-hidden rounded-t-[50px] 
+                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full dark:bg-neutral-900  bg-neutral-100 text-black  dark:text-white  px-2 py-3 border border-white w-full overflow-hidden rounded-t-[20px] 
                         '
                         >
                             <div className='flex flex-col gap-3 justify-center items-center'>
-                                <div className='bg-white/75 h-[5px] w-32 my-2 rounded-2xl' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}></div>
+                                <div className='bg-black h-[5px] w-32 my-2 rounded-2xl dark:bg-white/75' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}></div>
                                 <div className='mt-3'>
                                     <img
                                         src={song.songslist[song.currentSong].link.images[1].url}
@@ -212,8 +212,8 @@ function bottomnav() {
                                     />
                                 </div>
                                 <div className='text-center py-2'>
-                                    <h4 className='text-lg font-black text-white'>{song.current.name}</h4>
-                                    <p className='text-sm font-medium text-white'>{song.current.author}</p>
+                                    <h4 className='text-lg font-black '>{song.current.name}</h4>
+                                    <p className='text-sm font-medium '>{song.current.author}</p>
                                 </div>
                                 <div className='mt-4'>
                                     <div>
@@ -226,8 +226,8 @@ function bottomnav() {
                                             className='w-72 accent-gray-200'
                                         />
                                         <div className='flex justify-between'>
-                                            <span className="currentT text-white">{fmtMSS(currentTime)}</span>
-                                            <span className="totalT text-white">{fmtMSS(dur)}</span>
+                                            <span className="currentT text-black dark:text-white">{fmtMSS(currentTime)}</span>
+                                            <span className="totalT text-black dark:text-white">{fmtMSS(dur)}</span>
 
                                         </div>
 
@@ -241,7 +241,7 @@ function bottomnav() {
                                     className='accent-red-600 w-72 my-3'
                                 /> */}
                                     <div className='flex justify-between items-center my-5'>
-                                        <BsFillSkipStartFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
+                                        <BsFillSkipStartFill style={{ width: "30px", height: "30px", }} onClick={() => dispatch(prevSong(song.currentSong))} className='cursor-pointer text-black dark:text-white' />
                                         <div
                                             className="play"
                                             onClick={() => {
@@ -250,14 +250,14 @@ function bottomnav() {
                                             }}
                                         >
                                             <span className={!playing ? '' : 'hidden'}>
-                                                <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                                <FaPlay style={{ width: "30px", height: "30px", }} className='cursor-pointer text-black dark:text-white' />
                                             </span>
                                             <span className={!playing ? 'hidden' : ''}>
-                                                <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
+                                                <BsPauseFill style={{ width: "30px", height: "30px", }} className='cursor-pointer text-black dark:text-white' />
                                             </span>
                                         </div>
 
-                                        <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(nextSong(song.currentSong))} />
+                                        <BsFillSkipEndFill style={{ width: "30px", height: "30px", }} onClick={() => dispatch(nextSong(song.currentSong))} className='cursor-pointer text-black dark:text-white' />
                                     </div>
                                     <div>
 
@@ -272,7 +272,7 @@ function bottomnav() {
                                             name="volBar"
                                             id="volBar"
                                             onChange={(e) => handleVolume(e.target.value / 100)}
-                                            className='w-full accent-gray-200'
+                                            className='w-full accent-gray-600 dark:accent-gray-200 '
                                         />
                                         <span>
                                             <BsVolumeUpFill />
@@ -285,7 +285,7 @@ function bottomnav() {
                     </div>
 
                     {mobile && (
-                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-900/50 text-white  px-8 py-7 border border-white w-full overflow-hidden 
+                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-200/25 text-black dark:bg-neutral-900/50 dark:text-white  px-8 py-7 border border-white w-full overflow-hidden 
                     rounded-t-[50px] transition-all duration-300 '  >
                             <div className='flex justify-between items-center'>
                                 <div className='flex gap-4' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}>
@@ -313,10 +313,10 @@ function bottomnav() {
                                         }}
                                     >
                                         <span className={!playing ? '' : 'hidden'}>
-                                            <FaPlay style={{ width: "40px", height: "40px", color: "white" }} className='cursor-pointer bg-neutral-600 rounded-full p-3' />
+                                            <FaPlay style={{ width: "40px", height: "40px", }} className='cursor-pointer  bg-neutral-200 text-black dark:text-white dark:bg-neutral-600 rounded-full p-3' />
                                         </span>
                                         <span className={!playing ? 'hidden' : ''}>
-                                            <BsPauseFill style={{ width: "40px", height: "40px", color: "white" }} className='cursor-pointer  bg-neutral-600 rounded-full p-3' />
+                                            <BsPauseFill style={{ width: "40px", height: "40px", }} className='cursor-pointer   bg-neutral-200 text-black dark:text-white dark:bg-neutral-600 rounded-full p-3' />
                                         </span>
                                     </div>
 
