@@ -91,7 +91,7 @@ function bottomnav() {
         <>
             {song.current && (
                 <>
-                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-white bg-neutral-900/50 h-20 w-full '>
+                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-white bg-neutral-900/50 h-20 w-full  dark:border-neutral-900'>
                         <div className='flex justify-between items-center gap-1 p-3 relative'>
                             <div className='flex gap-2'>
                                 <div>
@@ -199,7 +199,7 @@ function bottomnav() {
 
                     <div id="hs-overlay-bottom" className="hs-overlay hs-overlay-open:translate-y-0 translate-y-full fixed bottom-0 inset-x-0 transition-all duration-300 transform max-h-full h-full w-full z-[60]  border-b  hidden" tabindex="-1" >
                         <div
-                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full dark:bg-neutral-900  bg-neutral-100 text-black  dark:text-white  px-2 py-3 border border-white dark:border-neutral-700  w-full overflow-hidden rounded-t-[20px] 
+                            className='sm:hidden inset-x-0 fixed bottom-0 right-0  h-full dark:bg-neutral-900  bg-neutral-100 text-black  dark:text-white  px-2 py-3 border border-white dark:border-neutral-900  w-full overflow-hidden rounded-t-[20px] 
                         '
                         >
                             <div className='flex flex-col gap-3 justify-center items-center'>
@@ -285,7 +285,7 @@ function bottomnav() {
                     </div>
 
                     {mobile && (
-                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-200/25 text-black dark:bg-neutral-900/50 dark:text-white  px-8 py-7 border border-white dark:border-neutral-700  w-full overflow-hidden 
+                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-200/25 text-black dark:bg-neutral-900/50 dark:text-white  px-8 py-7 border border-white dark:border-neutral-900  w-full overflow-hidden 
                     rounded-t-[50px] transition-all duration-300 '  >
                             <div className='flex justify-between items-center'>
                                 <div className='flex gap-4' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}>

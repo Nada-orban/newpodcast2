@@ -39,7 +39,7 @@ function songid({ song }) {
             <div className='hidden sm:block'><Nav2 /></div>
 
             <div className='sm:hidden inset-x-0 fixed top-0 h-[100px] bg-neutral-100/25 text-black dark:bg-neutral-900/50  dark:text-white  px-8 py-7 border border-white w-full overflow-hidden 
-                    rounded-b-[50px] transition-all duration-300 dark:border-neutral-700 ' >
+                    rounded-b-[50px] transition-all duration-300 dark:border-neutral-900 ' >
                 <div className='flex justify-between items-center '>
                     <a href='/music'>
                         <div className='rounded-full w-10 h-10 p-3  bg-neutral-200 text-neutral-700 dark:text-white dark:bg-neutral-600  '>
