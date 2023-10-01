@@ -5,6 +5,7 @@ import { songs } from '../../songs'
 import Link from 'next/link';
 import { Tab } from '@headlessui/react'
 import { useSelector, useDispatch } from 'react-redux';
+import Footer from '@/components/Footer';
 
 // artists
 const artists = []
@@ -56,9 +57,9 @@ function search() {
     return (
         <>
             <Nav2 />
-            <div className='overflow-hidden'>
-                <div className='pb-64 '>
-                    <div as='nav' className='w-full h-40 bg-zinc-900 relative'>
+            <div className='overflow-hidden  dark:bg-neutral-900 pb-44'>
+                <div className='pb-[100px] '>
+                    <div as='nav' className='w-full h-40 bg-zinc-900 dark:bg-neutral-700 relative'>
                         <input type='search'
                             className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 p-5 text-xl  bg-zinc-900 text-white '
                             placeholder='Search'
@@ -265,7 +266,7 @@ function search() {
                     </div>
                 </div>
             </div>
-
+            <Footer />
         </>
     )
 }

@@ -15,7 +15,7 @@ function Cardsection({ id, name, source, img, category }) {
                 </div>
                 <div className="mt-4 flex justify-between">
                     <div>
-                        <h3 className="text-sm text-gray-700">
+                        <h3 className="text-sm text-gray-700 dark:text-white">
                             <a
                                 href={`/design/${id}`}
                             >
@@ -23,7 +23,7 @@ function Cardsection({ id, name, source, img, category }) {
                                 {name}
                             </a>
                         </h3>
-                        <p className="mt-1 text-sm text-gray-500">{category}</p>
+                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{category}</p>
                     </div>
 
                 </div>

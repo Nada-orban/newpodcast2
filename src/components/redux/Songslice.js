@@ -11,9 +11,9 @@ const initialState = {
     songstate: {},
 
     songarray:
-        // typeof localStorage !== 'undefined' && localStorage.getItem('songarray') ?
-        //     JSON.parse(localStorage.getItem('songarray')) :
-        []
+        typeof localStorage !== 'undefined' && localStorage.getItem('songarray') ?
+            JSON.parse(localStorage.getItem('songarray')) :
+            []
     ,
     searchitem: "",
     currentSong: 0,

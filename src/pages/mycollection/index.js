@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import { removeitem } from '../../components/redux/Songslice'
 import { useSelector, useDispatch } from 'react-redux';
 import { searchitem } from '../../components/redux/Songslice'
+import Footer from '@/components/Footer'
 
 
 
@@ -33,9 +34,9 @@ function index() {
     return (
         <>
             <Nav2 />
-            <div>
+            <div className='bg-white dark:bg-neutral-900 pb-10'>
                 {song.songarray.length === 0 ? (
-                    <div className='mx-auto text-center  mt-20 flex-col justify-center items-center pb-60' >
+                    <div className='mx-auto text-center  pt-20 flex-col justify-center items-center pb-64' >
                         <p className='text-4xl font-extrabold'>Start Listening</p>
                         <a href='/search'>
                             <input
@@ -111,8 +112,10 @@ function index() {
                     </div>
                 )}
 
+
                 {/* <Mycollection /> */}
             </div>
+            <Footer />
         </>
     )
 }

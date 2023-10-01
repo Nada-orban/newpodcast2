@@ -2,15 +2,16 @@ import React from 'react'
 import Cardsection from '../components/Cardsection'
 import { products } from '../../data'
 import Nav2 from '@/components/Nav2'
+import Footer from '@/components/Footer'
 
 function business({ products }) {
     const businessproducts = products.filter((product) => product.category === "Business")
     return (
         <>
             <Nav2 />
-            <div>
+            <div className='bg-white dark:bg-neutral-900 text-gray-900 dark:text-white'>
                 <div className="mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">Business</h2>
+                    <h2 className="text-2xl font-bold tracking-tight ">Business</h2>
 
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                         {businessproducts.map((product) => {
@@ -26,6 +27,7 @@ function business({ products }) {
                 </div>
 
             </div>
+            <Footer />
         </>
     )
 }

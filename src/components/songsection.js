@@ -26,15 +26,15 @@ function Songsection({ id, name, author, link }) {
                 </a>
                 <div className="mt-4 flex justify-between">
                     <div>
-                        <h3 className="text-sm text-gray-700">
+                        <h3 className="text-sm text-gray-700 dark:text-white">
                             <a
                                 href={`/music/${id}`}
                             >
-                                <span aria-hidden="true" className="absolute inset-0" />
+                                <span aria-hidden="true" className="absolute inset-0 " />
                                 {name}
                             </a>
                         </h3>
-                        <a href={`/artists/${id}`}><p className="mt-1 text-sm text-gray-500">{author}</p></a>
+                        <a href={`/artists/${id}`}><p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{author}</p></a>
 
                     </div>
 
