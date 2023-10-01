@@ -8,6 +8,7 @@ import Bottomnav from '@/components/Bottomnav'
 import { useSelector, useDispatch } from 'react-redux';
 import { songhandle, currentmusic } from '../../components/redux/Songslice'
 import handler from '../api/products/[id]'
+import Footer from '../../components/Footer'
 // import playerContext from '../../components/context/playerContext'
 
 
@@ -47,7 +48,7 @@ function artistid({ song }) {
     return (
         <>
             <Nav2 />
-            <div className='mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8'>
+            <div className='mx-auto max-w-2xl px-10 py-10 sm:px-6 sm:py-16 lg:max-w-7xl lg:px-8 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white'>
                 <div className='flex flex-col justify-center items-center w-full my-10'>
                     <div className='container'>
                         <div className='flex justify-center flex-col '>
@@ -173,7 +174,7 @@ function artistid({ song }) {
 
                 </div>
             </div>
-
+            <Footer />
         </>
     )
 }

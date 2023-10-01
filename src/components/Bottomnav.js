@@ -91,51 +91,62 @@ function bottomnav() {
         <>
             {song.current && (
                 <>
-                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-white bg-neutral-900/50 h-20 w-full  dark:border-neutral-900'>
-                        <div className='flex justify-between items-center gap-1 p-3 relative'>
-                            <div className='flex gap-2'>
-                                <div>
-                                    <img
-                                        src={song.songslist[song.currentSong].link.images[1].url}
-                                        className='w-[50px] h-[50px]'
-
-                                    />
-                                </div>
-                                <div className=''>
-                                    <h2>{song.songslist[song.currentSong].name}</h2>
-                                    <a href={`/artists/${song.songslist[song.currentSong].id}`} className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></a>
-
-                                </div>
+                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-black bg-neutral-500/20 dark:bg-neutral-900 h-20 w-full  dark:text-white dark:border-neutral-900'>
+                        <div className='relative'>
+                            <div className='w-full absolute top-[-8px] '>
+                                <input
+                                    onChange={handleProgress}
+                                    value={dur ? (currentTime * 100) / dur : 0}
+                                    type="range"
+                                    name="progresBar"
+                                    id="prgbar"
+                                    className='w-full accent-gray-200 '
+                                />
                             </div>
-                            <audio
-                                onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
-                                onCanPlay={(e) => setDur(e.target.duration)}
-                                onEnded={() => dispatch(handleEnd())}
-                                ref={audio}
+                            <div className='flex justify-between items-center gap-1 p-3 pt-5 relative'>
+                                <div className='flex gap-2'>
+                                    <div>
+                                        <img
+                                            src={song.songslist[song.currentSong].link.images[1].url}
+                                            className='w-[50px] h-[50px]'
 
-                                preload="true"
-                                src={song.songslist[song.currentSong].url}
-                            />
-                            <div className=" ">
-                                <div className='musicControls flex justify-between gap-10 absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 '>
-                                    <BsFillSkipStartFill className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} onClick={() => dispatch(prevSong(song.currentSong))} />
-                                    <div
-                                        className="play"
-                                        onClick={() => {
-                                            // togglePlaying()
-                                            toggleAudio()
-                                        }}
-                                    >
-                                        <span className={!playing ? '' : 'hidden'}>
-                                            <FaPlay style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
-                                        </span>
-                                        <span className={!playing ? 'hidden' : ''}>
-                                            <BsPauseFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' />
-                                        </span>
+                                        />
                                     </div>
-                                    <BsFillSkipEndFill style={{ width: "30px", height: "30px", color: "white" }} className='cursor-pointer' onClick={() => dispatch(nextSong(song.currentSong))} />
+                                    <div className=''>
+                                        <h2>{song.songslist[song.currentSong].name}</h2>
+                                        <a href={`/artists/${song.songslist[song.currentSong].id}`} className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></a>
+
+                                    </div>
                                 </div>
-                                {/* <div className='mt-3 flex  gap-5'>
+                                <audio
+                                    onTimeUpdate={(e) => setCurrentTime(e.target.currentTime)}
+                                    onCanPlay={(e) => setDur(e.target.duration)}
+                                    onEnded={() => dispatch(handleEnd())}
+                                    ref={audio}
+
+                                    preload="true"
+                                    src={song.songslist[song.currentSong].url}
+                                />
+                                <div className=" ">
+                                    <div className='musicControls flex justify-between gap-10 absolute transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2 '>
+                                        <BsFillSkipStartFill className='cursor-pointer' style={{ width: "30px", height: "30px", }} onClick={() => dispatch(prevSong(song.currentSong))} />
+                                        <div
+                                            className="play"
+                                            onClick={() => {
+                                                // togglePlaying()
+                                                toggleAudio()
+                                            }}
+                                        >
+                                            <span className={!playing ? '' : 'hidden'}>
+                                                <FaPlay style={{ width: "30px", height: "30px", }} className='cursor-pointer' />
+                                            </span>
+                                            <span className={!playing ? 'hidden' : ''}>
+                                                <BsPauseFill style={{ width: "30px", height: "30px", }} className='cursor-pointer' />
+                                            </span>
+                                        </div>
+                                        <BsFillSkipEndFill style={{ width: "30px", height: "30px", }} className='cursor-pointer' onClick={() => dispatch(nextSong(song.currentSong))} />
+                                    </div>
+                                    {/* <div className='mt-3 flex  gap-5'>
                                     <span className="currentT">{fmtMSS(currentTime)}</span>
                                     <input
                                         onChange={handleProgress}
@@ -149,46 +160,49 @@ function bottomnav() {
 
                                     <span className="totalT">{fmtMSS(dur)}</span>
                                 </div> */}
-                            </div>
+                                </div>
 
-                            <div className='flex gap-3 absolute right-5 items-center'>
-                                <div>
-                                    {/* <input
+                                <div className='flex gap-3 absolute right-5 items-center'>
+                                    <div>
+                                        {/* <input
                                         onChange={handleProgress}
                                         value={dur ? (currentTime * 100) / dur : 0}
                                         type="range"
                                         name="progresBar"
                                         id="prgbar"
                                     /> */}
-                                    <span className="currentT">{fmtMSS(currentTime)}</span>/
-                                    <span className="totalT">{fmtMSS(dur)}</span>
+                                        <span className="currentT">{fmtMSS(currentTime)}</span>/
+                                        <span className="totalT">{fmtMSS(dur)}</span>
+                                    </div>
+
+                                    <div className="vlme flex items-center">
+                                        <span className="volum">
+                                            <BsFillVolumeDownFill className='cursor-pointer' style={{ width: "30px", height: "30px", }} onClick={() => setShowvolum(!showvolum)} />
+                                        </span>
+                                        {showvolum && (<input
+                                            value={Math.round(statevolum * 100)}
+                                            type="range"
+                                            name="volBar"
+                                            id="volBar"
+                                            onChange={(e) => handleVolume(e.target.value / 100)}
+                                            className='accent-gray-200'
+
+                                        />)}
+
+                                    </div>
+                                    <IoReload style={{ width: "20px", height: "20px", }}
+                                        // className={'repeat ' + (repeat ? 'active' : '')}
+                                        className='cursor-pointer'
+                                        onClick={handlerepeat}
+                                    />
+                                    {/* <SpeakerWaveIcon className=" h-10 w-15 cursor-pointer" aria-hidden="true" /> */}
+
+
                                 </div>
-
-                                <div className="vlme flex items-center">
-                                    <span className="volum">
-                                        <BsFillVolumeDownFill className='cursor-pointer' style={{ width: "30px", height: "30px", color: "white" }} onClick={() => setShowvolum(!showvolum)} />
-                                    </span>
-                                    {showvolum && (<input
-                                        value={Math.round(statevolum * 100)}
-                                        type="range"
-                                        name="volBar"
-                                        id="volBar"
-                                        onChange={(e) => handleVolume(e.target.value / 100)}
-                                        className='accent-gray-200'
-
-                                    />)}
-
-                                </div>
-                                <IoReload style={{ width: "20px", height: "20px", color: "white" }}
-                                    // className={'repeat ' + (repeat ? 'active' : '')}
-                                    className='cursor-pointer'
-                                    onClick={handlerepeat}
-                                />
-                                {/* <SpeakerWaveIcon className=" h-10 w-15 cursor-pointer" aria-hidden="true" /> */}
-
-
                             </div>
+
                         </div>
+
 
                     </div>
 
@@ -285,43 +299,56 @@ function bottomnav() {
                     </div>
 
                     {mobile && (
-                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-200/25 text-black dark:bg-neutral-900/50 dark:text-white  px-8 py-7 border border-white dark:border-neutral-900  w-full overflow-hidden 
-                    rounded-t-[50px] transition-all duration-300 '  >
-                            <div className='flex justify-between items-center'>
-                                <div className='flex gap-4' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}>
-                                    <div>
-                                        <img
-                                            src={song.songslist[song.currentSong].link.images[1].url}
-                                            className='w-[50px] h-[50px] '
-
-                                        />
-                                    </div>
-                                    <div className=''>
-                                        <h2>{song.songslist[song.currentSong].name}</h2>
-                                        <div
-
-                                            className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></div>
-
-                                    </div>
+                        <div className='sm:hidden inset-x-0 fixed bottom-0 h-[100px] bg-neutral-200/25 text-black dark:bg-neutral-900 dark:text-white     w-full overflow-hidden 
+                     rounded-t-[10px] transition-all duration-300 '  >
+                            <div className='relative'>
+                                <div className='w-full absolute top-[-3px]  '>
+                                    <input
+                                        onChange={handleProgress}
+                                        value={dur ? (currentTime * 100) / dur : 0}
+                                        type="range"
+                                        name="progresBar"
+                                        id="prgbar"
+                                        className='w-full accent-gray-200 '
+                                    />
                                 </div>
-                                <div>
-                                    <div
-                                        className="play"
-                                        onClick={() => {
-                                            // togglePlaying()
-                                            toggleAudio()
-                                        }}
-                                    >
-                                        <span className={!playing ? '' : 'hidden'}>
-                                            <FaPlay style={{ width: "40px", height: "40px", }} className='cursor-pointer  bg-neutral-200 text-black dark:text-white dark:bg-neutral-600 rounded-full p-3' />
-                                        </span>
-                                        <span className={!playing ? 'hidden' : ''}>
-                                            <BsPauseFill style={{ width: "40px", height: "40px", }} className='cursor-pointer   bg-neutral-200 text-black dark:text-white dark:bg-neutral-600 rounded-full p-3' />
-                                        </span>
-                                    </div>
+                                <div className='flex justify-between items-center px-8 py-7'>
+                                    <div className='flex gap-4' data-hs-overlay="#hs-overlay-bottom" onClick={() => setMobile(!mobile)}>
+                                        <div>
+                                            <img
+                                                src={song.songslist[song.currentSong].link.images[1].url}
+                                                className='w-[50px] h-[50px] '
 
+                                            />
+                                        </div>
+                                        <div className=''>
+                                            <h2>{song.songslist[song.currentSong].name}</h2>
+                                            <div
+
+                                                className='hover:underline hover:underline-offset-2'><p>{song.current.author}</p></div>
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            className="play"
+                                            onClick={() => {
+                                                // togglePlaying()
+                                                toggleAudio()
+                                            }}
+                                        >
+                                            <span className={!playing ? '' : 'hidden'}>
+                                                <FaPlay style={{ width: "40px", height: "40px", }} className='cursor-pointer  bg-neutral-200 text-black dark:text-white dark:bg-neutral-600 rounded-full p-3' />
+                                            </span>
+                                            <span className={!playing ? 'hidden' : ''}>
+                                                <BsPauseFill style={{ width: "40px", height: "40px", }} className='cursor-pointer   bg-neutral-200 text-black dark:text-white dark:bg-neutral-600 rounded-full p-3' />
+                                            </span>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
+
                         </div>)
                     }
 
