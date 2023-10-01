@@ -21,8 +21,10 @@ export default function App({ Component, pageProps }) {
       <Provider store={store} >
         {/* <PlayerState> */}
         {/* <Nav1 /> */}
+
         <Component {...pageProps} />
-        {/* <Footer /> */}
+
+
         <Bottomnav />
         {/* <Controls /> */}
         {/* </PlayerState> */}

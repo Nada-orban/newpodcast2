@@ -4,6 +4,10 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { MdDarkMode } from 'react-icons/md'
+import { BsFillSunFill } from 'react-icons/bs'
+import { useTheme } from "next-themes";
+
 
 const navigation = [
     { name: 'Home', href: '/' },
@@ -25,9 +29,12 @@ function classNames(...classes) {
 
 
 function Nav2() {
+    const { systemTheme, theme, setTheme } = useTheme();
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+
     const router = useRouter()
     return (
-        <Disclosure as="nav" className="bg-neutral-950  sticky top-0 z-10">
+        <Disclosure as="nav" className="bg-neutral-950  sticky top-0 z-10 border-b-2 border-neutral-500 ">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -76,7 +83,8 @@ function Nav2() {
                                 </div>
                             </div>
 
-                            <div className="absolute  flex items-center  right-0 inset-y-5  justify-between">
+                            <div className="absolute  flex items-center  right-0 inset-y-5  justify-between ">
+                                <div className='rounded-full w-8 h-8  bg-gray-800 p-2 text-gray-400  cursor-pointer mx-1' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}> {theme === "light" ? <MdDarkMode style={{ color: "white", }} /> : <BsFillSunFill style={{ color: "#fbbf24", }} />} </div>
                                 <Link href='/search'>
                                     <button
                                         type="button"

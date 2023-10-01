@@ -5,6 +5,9 @@ import { Bars3Icon, BellIcon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/
 import { useScrollPosition } from './useScrollPosition'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { MdDarkMode } from 'react-icons/md'
+import { BsFillSunFill } from 'react-icons/bs'
+import { useTheme } from "next-themes";
 
 
 
@@ -31,6 +34,8 @@ function classNames(...classes) {
 
 
 function Nav1() {
+    const { systemTheme, theme, setTheme } = useTheme();
+    const currentTheme = theme === 'system' ? systemTheme : theme;
     const router = useRouter()
     const scrollPosition = useScrollPosition()
     const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -91,6 +96,7 @@ function Nav1() {
 
 
                                 <div className="absolute  flex items-center  right-0 inset-y-5  justify-between">
+                                    <div className='rounded-full w-8 h-8  bg-gray-800 p-2 text-gray-400  cursor-pointer mx-1' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}> {theme === "light" ? <MdDarkMode style={{ color: "white", }} /> : <BsFillSunFill style={{ color: "#fbbf24", }} />} </div>
                                     <Link href='/search'>
                                         <button
                                             type="button"
