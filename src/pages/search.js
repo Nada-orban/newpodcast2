@@ -91,7 +91,7 @@ function search() {
                                         >
                                             <div >
                                                 {products.filter((product) =>
-                                                    product.name.includes(input)).map((product) => {
+                                                    product.name.toLowerCase().includes(input)).map((product) => {
                                                         return (
                                                             <>
 
