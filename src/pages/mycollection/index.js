@@ -34,7 +34,7 @@ function index() {
     return (
         <>
             <Nav2 />
-            <div className='bg-white dark:bg-neutral-900 pb-10  text-gray-900 dark:text-white'>
+            <div className='bg-white dark:bg-neutral-900 relative text-gray-900 dark:text-white'>
                 {song.songarray.length === 0 ? (
                     <div className='mx-auto text-center  pt-20 flex-col justify-center items-center pb-64' >
                         <p className='text-4xl font-extrabold'>Start Listening</p>
@@ -50,7 +50,7 @@ function index() {
                 ) : (
                     <div className='mx-auto max-w-2xl px-10 py-10 sm:px-10 sm:py-10 lg:max-w-7xl lg:px-10  text-gray-900 dark:text-white '>
                         <h1 className='text-2xl font-bold  '>Recently Played</h1>
-                        <div className='grid grid-cols-4 my-5 gap-6'>
+                        <div className='grid grid-cols-1 sm:grid-cols-4 margin-auto my-5 gap-6'>
                             {song.songarray.map((song) => {
                                 return (
                                     <div key={song.id} className='relative  h-72  group bg-black w-72 transition duration-300 ease-out  hover:scale-110'>
@@ -115,7 +115,11 @@ function index() {
 
                 {/* <Mycollection /> */}
             </div>
-            <Footer />
+            <div className='absolute bottom-0 w-full'>
+                <Footer />
+
+            </div>
+
         </>
     )
 }

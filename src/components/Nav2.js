@@ -83,7 +83,7 @@ function Nav2() {
                                 </div>
                             </div>
 
-                            <div className="absolute  flex items-center  right-0 inset-y-5  justify-between ">
+                            <div className="absolute  flex items-center  right-5 sm:right-1 inset-y-5  justify-between ">
                                 <div className='rounded-full w-8 h-8  bg-gray-800 p-2 text-gray-400  cursor-pointer mx-1' onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}> {theme === "light" ? <MdDarkMode style={{ color: "white", }} /> : <BsFillSunFill style={{ color: "#fbbf24", }} />} </div>
                                 <Link href='/search'>
                                     <button
@@ -101,7 +101,7 @@ function Nav2() {
                                 </Link>
 
                                 {/* Profile dropdown */}
-                                <Menu as="div" className="relative ml-3">
+                                <Menu as="div" className="relative ml-3 hidden sm:block">
                                     <div>
                                         <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                             <span className="absolute -inset-1.5" />

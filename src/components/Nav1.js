@@ -83,6 +83,20 @@ function Nav1() {
                                             <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                                         )}
                                     </Disclosure.Button>
+                                    <Link href='/search'>
+                                        <button
+                                            type="button"
+                                            className="sm:hidden relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800  "
+                                        >
+                                            <span className="absolute -inset-1.5" />
+                                            <span className="sr-only">View notifications</span>
+
+                                            <MagnifyingGlassIcon className=" h-6 w-6 " aria-hidden="true" />
+
+
+
+                                        </button>
+                                    </Link>
                                 </div>
                                 <Link href='/'>
                                     <div className='absolute items-center transform -translate-x-1/2 -translate-y-1/2  top-1/2 left-1/2  inset-y-1'>
@@ -100,7 +114,7 @@ function Nav1() {
                                     <Link href='/search'>
                                         <button
                                             type="button"
-                                            className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800  "
+                                            className="hidden sm:block relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800  "
                                         >
                                             <span className="absolute -inset-1.5" />
                                             <span className="sr-only">View notifications</span>
