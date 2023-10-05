@@ -91,7 +91,7 @@ function search() {
                                         >
                                             <div >
                                                 {products.filter((product) =>
-                                                    product.name.toLowerCase().includes(input)).map((product) => {
+                                                    product.name.toLowerCase().includes(input.toLowerCase())).map((product) => {
                                                         return (
                                                             <>
 
@@ -121,7 +121,7 @@ function search() {
                                                     )
                                                 }
                                                 {artists.filter((song) =>
-                                                    song.author.toLowerCase().includes(input)).map((song) => {
+                                                    song.author.toLowerCase().includes(input.toLowerCase())).map((song) => {
                                                         return (
                                                             <>
 
@@ -158,7 +158,7 @@ function search() {
                                         </Tab.Panel>
                                         <Tab.Panel>
                                             {artists.filter((song) =>
-                                                song.author.toLowerCase().includes(input)).map((song) => {
+                                                song.author.toLowerCase().includes(input.toLowerCase())).map((song) => {
                                                     return (
                                                         <>
 
@@ -193,7 +193,7 @@ function search() {
                                         </Tab.Panel>
                                         <Tab.Panel>
                                             {songs.filter((song) =>
-                                                song.name.toLowerCase().includes(input)).map((song) => {
+                                                song.name.toLowerCase().includes(input.toLowerCase())).map((song) => {
                                                     return (
                                                         <>
 
@@ -225,7 +225,7 @@ function search() {
                                         </Tab.Panel>
                                         <Tab.Panel>
                                             {products.filter((product) =>
-                                                product.name.toLowerCase().includes(input)).map((product) => {
+                                                product.name.toLowerCase().includes(input.toLowerCase())).map((product) => {
                                                     return (
                                                         <>
 
