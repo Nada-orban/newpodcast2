@@ -55,13 +55,13 @@ const Songslice = createSlice({
             // }
 
 
-            setStorLocal("songarray", JSON.stringify(state.songarray));
+            localStorage.setItem("songarray", JSON.stringify(state.songarray));
         },
         removeitem: (state, action) => {
             const notremoveitems = state.songarray.filter(item => (item.id !== action.payload.id));
             state.songarray = notremoveitems;
 
-            setStorLocal("songarray", JSON.stringify(state.cartItems));
+            localStorage.setItem("songarray", JSON.stringify(state.cartItems));
 
         },
         searchitem: (state, action) => {
