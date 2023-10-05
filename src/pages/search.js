@@ -57,7 +57,7 @@ function search() {
     return (
         <>
             <Nav2 />
-            <div className='overflow-hidden  dark:bg-neutral-900 pb-44 h-full'>
+            <div className='overflow-hidden  dark:bg-neutral-900  pb-[475px] sm:pb-44'>
                 <div className='pb-[100px] '>
                     <div as='nav' className='w-full h-40 bg-zinc-900 dark:bg-neutral-700 relative'>
                         <input type='search'
@@ -266,11 +266,7 @@ function search() {
                     </div>
                 </div>
             </div>
-            <div className='absolute bottom-0 w-full'>
-                <Footer />
-
-            </div>
-
+            <Footer />
         </>
     )
 }

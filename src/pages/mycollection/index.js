@@ -34,7 +34,7 @@ function index() {
     return (
         <>
             <Nav2 />
-            <div className='bg-white dark:bg-neutral-900 relative text-gray-900 dark:text-white'>
+            <div className='bg-white dark:bg-neutral-900 pb-[72%] sm:pb-0 text-gray-900 dark:text-white'>
                 {song.songarray.length === 0 ? (
                     <div className='mx-auto text-center  pt-20 flex-col justify-center items-center pb-64' >
                         <p className='text-4xl font-extrabold'>Start Listening</p>
@@ -115,10 +115,10 @@ function index() {
 
                 {/* <Mycollection /> */}
             </div>
-            <div className='absolute bottom-0 w-full'>
-                <Footer />
 
-            </div>
+            <Footer />
+
+
 
         </>
     )
