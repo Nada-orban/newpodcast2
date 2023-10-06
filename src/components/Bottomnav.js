@@ -91,7 +91,7 @@ function bottomnav() {
         <>
             {song.current && (
                 <>
-                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-black bg-neutral-500/20 dark:bg-neutral-900 h-20 w-full  dark:text-white dark:border-neutral-900'>
+                    <div className='fixed hidden sm:block  inset-x-0 bottom-0 text-black bg-neutral-300 dark:bg-neutral-900 h-20 w-full  dark:text-white dark:border-neutral-900'>
                         <div className='relative'>
                             <div className='w-full absolute top-[-8px] '>
                                 <input
