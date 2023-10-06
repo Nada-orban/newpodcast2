@@ -43,25 +43,25 @@ const Songslice = createSlice({
     reducers: {
         songhandle: (state, action) => {
             state.songstate = action.payload;
-            const filterarray = state.songarray.findIndex(item => item.id === action.payload.id)
-            if (filterarray >= 0) {
-                console.log(filterarray)
-            } else {
-                state.songarray.push(action.payload)
-            }
+            // const filterarray = state.songarray.findIndex(item => item.id === action.payload.id)
+            // if (filterarray >= 0) {
+            //     console.log(filterarray)
+            // } else {
+            //     state.songarray.push(action.payload)
+            // }
             // if (!state.songarray.includes(action.payload)) {
             //     state.songarray.push(action.payload)
 
             // }
 
 
-            localStorage.setItem("songarray", JSON.stringify(state.songarray));
+            // setStorLocal("songarray", JSON.stringify(state.songarray));
         },
         removeitem: (state, action) => {
             const notremoveitems = state.songarray.filter(item => (item.id !== action.payload.id));
             state.songarray = notremoveitems;
 
-            localStorage.setItem("songarray", JSON.stringify(state.cartItems));
+            setStorLocal("songarray", JSON.stringify(state.songarray));
 
         },
         searchitem: (state, action) => {
@@ -73,6 +73,14 @@ const Songslice = createSlice({
         currentmusic: (state, action) => {
             state.currentSong = action.payload.id;
             state.current = action.payload
+            const filterarray = state.songarray.findIndex(item => item.id === action.payload.id)
+            if (filterarray >= 0) {
+                console.log(filterarray)
+            } else {
+                state.songarray.push(action.payload)
+            }
+            setStorLocal("songarray", JSON.stringify(state.songarray));
+
         }
         ,
         prevSong: (state, action) => {
