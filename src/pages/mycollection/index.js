@@ -48,9 +48,9 @@ function index() {
 
                     </div>
                 ) : (
-                    <div className='mx-auto max-w-2xl px-10 py-10 sm:px-10 sm:py-10 lg:max-w-7xl lg:px-10  text-gray-900 dark:text-white '>
+                    <div className='mx-auto max-w-2xl px-10 py-10 sm:px-10 sm:py-[60px] lg:max-w-7xl lg:px-10  text-gray-900 dark:text-white '>
                         <h1 className='text-2xl font-bold  '>Recently Played</h1>
-                        <div className='grid grid-cols-1 sm:grid-cols-4 margin-auto my-5 gap-6'>
+                        <div className='grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 margin-auto my-5 gap-6'>
                             {song.songarray.map((song) => {
                                 return (
                                     <div key={song.id} className='relative  h-72  group bg-black w-72 transition duration-300 ease-out  hover:scale-110'>
@@ -64,38 +64,41 @@ function index() {
                                         </div>
                                         {/*<div className='absolute cursor-pointer bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[#1d1b1b67] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100'></div> */}
                                         <div className='hidden absolute   bottom-0 left-0 right-0 top-0 h-full w-full  bg-[#1d1b1b67] bg-fixed opacity-0  hover:opacity-100 text-white group-hover:block transition duration-300 ease-out delay-150 '>
-                                            <div className='flex flex-col justify-center items-center mt-28'>
-                                                <PlayCircleIcon className=" h-12 w-12 cursor-pointer mx-auto " aria-hidden="true" />
-                                                <p className='text-md '>{song.name}</p>
-                                                <Menu as="div" className="relative ml-3 p-2">
-                                                    <div>
-                                                        <Menu.Button className="relative flex rounded-full  mt-8 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                                            <span className="absolute -inset-1.5" />
-                                                            <span className="sr-only">Open user menu</span>
-                                                            <EllipsisHorizontalIcon className=" h-10 w-10 cursor-pointer " aria-hidden="true" />
-                                                        </Menu.Button>
-                                                    </div>
-                                                    <Transition
-                                                        as={Fragment}
-                                                        enter="transition ease-out duration-100"
-                                                        enterFrom="transform opacity-0 scale-95"
-                                                        enterTo="transform opacity-100 scale-100"
-                                                        leave="transition ease-in duration-75"
-                                                        leaveFrom="transform opacity-100 scale-100"
-                                                        leaveTo="transform opacity-0 scale-95"
-                                                    >
-                                                        <Menu.Items className="absolute text-black left-16 top-7 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-2">
-                                                            <Menu.Item onClick={() => dispatch(removeitem(song))} className="cursor-pointer">
-                                                                <p>remove from your collection</p>
-                                                            </Menu.Item>
-                                                            <Menu.Item className="cursor-pointer">
-                                                                <p>share</p>
-                                                            </Menu.Item>
+                                            <a href={`/music/${song.id}`}>
+                                                <div className='flex flex-col justify-center items-center mt-28'>
+                                                    <PlayCircleIcon className=" h-12 w-12 cursor-pointer mx-auto " aria-hidden="true" />
+                                                    <p className='text-md '>{song.name}</p>
+                                                    <Menu as="div" className="relative ml-3 p-2 ">
+                                                        <div>
+                                                            <Menu.Button className="relative flex rounded-full  mt-8 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                                                <span className="absolute -inset-1.5" />
+                                                                <span className="sr-only">Open user menu</span>
+                                                                <EllipsisHorizontalIcon className=" h-10 w-10 cursor-pointer " aria-hidden="true" />
+                                                            </Menu.Button>
+                                                        </div>
+                                                        <Transition
+                                                            as={Fragment}
+                                                            enter="transition ease-out duration-100"
+                                                            enterFrom="transform opacity-0 scale-95"
+                                                            enterTo="transform opacity-100 scale-100"
+                                                            leave="transition ease-in duration-75"
+                                                            leaveFrom="transform opacity-100 scale-100"
+                                                            leaveTo="transform opacity-0 scale-95"
+                                                        >
+                                                            <Menu.Items className="absolute text-black left-[-80px]  top-10 z-50 mt-2 w-60 origin-top-right rounded-md bg-white py-3 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none px-2">
+                                                                <Menu.Item onClick={() => dispatch(removeitem(song))} className="cursor-pointer">
+                                                                    <p>remove from your collection</p>
+                                                                </Menu.Item>
+                                                                <Menu.Item className="cursor-pointer">
+                                                                    <p>share</p>
+                                                                </Menu.Item>
 
-                                                        </Menu.Items>
-                                                    </Transition>
-                                                </Menu>
-                                            </div>
+                                                            </Menu.Items>
+                                                        </Transition>
+                                                    </Menu>
+                                                </div>
+                                            </a>
+
                                         </div>
 
                                     </div>
