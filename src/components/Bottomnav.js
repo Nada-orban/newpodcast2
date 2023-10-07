@@ -5,7 +5,7 @@ import { HandThumbDownIcon, HandThumbUpIcon, ArrowUturnLeftIcon, ForwardIcon, Pl
 import { songs } from '../../songs'
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { songhandle, removeitem, currentmusic, searchitem, handleEnd, prevSong, nextSong } from '../components/redux/Songslice'
+import { songhandle, removeitem, currentmusic, searchitem, handleEnd, prevSong, nextSong, repeatSong } from '../components/redux/Songslice'
 import { IoReload } from 'react-icons/io5'
 import { FaPlay } from 'react-icons/fa6'
 import { BsFillSkipEndFill, BsFillSkipStartFill, BsPauseFill, BsFillVolumeDownFill, BsFillVolumeOffFill, BsVolumeUpFill } from 'react-icons/bs'
@@ -73,15 +73,21 @@ function bottomnav() {
     const fmtMSS = (s) => {
         return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + ~~s
     }
-    const handlerepeat = () => {
-        setCurrentTime(0)
-    }
+    // const handlerepeat = () => {
+
+
+    // }
     useEffect(() => {
 
         if (playing) {
             toggleAudio()
         }
     }, [song.current]);
+
+
+
+
+
 
 
 
@@ -190,11 +196,17 @@ function bottomnav() {
                                         />)}
 
                                     </div>
-                                    <IoReload style={{ width: "20px", height: "20px", }}
+                                    {/* <span
+                                        onClick={toggleRepeat}
+                                        className={'repeat ' + (repeat ? 'active' : '')}
+                                    >
+                                        <i className="fas fa-redo-alt"></i>
+                                    </span> */}
+                                    {/* <IoReload style={{ width: "20px", height: "20px", }}
                                         // className={'repeat ' + (repeat ? 'active' : '')}
                                         className='cursor-pointer'
-                                        onClick={handlerepeat}
-                                    />
+                                        onClick={() => dispatch(repeatSong(song.currentSong))}
+                                    /> */}
                                     {/* <SpeakerWaveIcon className=" h-10 w-15 cursor-pointer" aria-hidden="true" /> */}
 
 
@@ -354,6 +366,7 @@ function bottomnav() {
 
                 </>
             )}
+
 
 
         </>

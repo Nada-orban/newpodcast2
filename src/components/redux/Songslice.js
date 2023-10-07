@@ -116,6 +116,13 @@ const Songslice = createSlice({
                 // SetCurrent(state.currentSong + 1)
             }
         },
+        repeatSong: (state, action) => {
+            state.currentSong = action.payload.id;
+
+
+
+
+        },
         handleEnd: (state, action) => {
             // Check for random and repeat options
             state.currentSong = action.payload.id;
@@ -134,17 +141,18 @@ const Songslice = createSlice({
                 }
             }
         },
-        repeat: (state, action) => {
-            if (state.repeat == true) {
-                state.currentSong = action.payload;
-            }
-        }
+
+        // repeat: (state, action) => {
+        //     if (state.repeat == true) {
+        //         state.currentSong = action.payload;
+        //     }
+        // }
 
     }
 })
 
 
 
-export const { songhandle, removeitem, currentmusic, searchitem, handleEnd, prevSong, nextSong } = Songslice.actions
+export const { songhandle, removeitem, currentmusic, searchitem, handleEnd, prevSong, nextSong, repeatSong } = Songslice.actions
 
 export default Songslice.reducer
